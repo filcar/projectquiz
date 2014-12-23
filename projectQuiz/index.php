@@ -15,7 +15,7 @@ echo "
 	<meta charset='utf-8'/>
 </head>
 <body>
- <h2>Καλώς ήρθατε στο Project quiz</h2>
+ <h2>Καλώς ήρθατε στο Project Quiz</h2>
 	<p>Αν έχεται ήδη έναν λογαριασμό παρακαλώ συνδεθείτε</p>
         <p>χρησιμοποιώντας το όνομα χρήστη και τον κωδικό σας</p>
         <form action='includes/login.php' method='post'>
