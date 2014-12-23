@@ -25,8 +25,11 @@ echo "
             <p><a href='register.php'>Εγγραφείτε τώρα</a></p>
         </form>
  ";
-if ($_GET["error"]==1)    
+
+if (isset($_GET["error"])){
+if($_GET["error"]==1)
     echo "Λάθος όνομα χρήστη ή κωδικού πρόσβασης";
+}
 echo "
 </body>
 </html>";

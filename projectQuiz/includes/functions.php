@@ -19,7 +19,7 @@ function log_in($username, $password) {
 }
 
 function check_role(){
-        if($_SESSION[role]!=1){
+        if($_SESSION["role"]!=1){
             echo "<html>
                     <head> <meta charset='utf-8'/>
                     </head>
