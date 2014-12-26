@@ -8,8 +8,8 @@ function log_in($username, $password) {
         if ($num_rows == 1) {
             $user = mysql_fetch_array($result);
             session_start();
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['id'] = $user['id'];
+            $_SESSION["username"] = $user["username"];
+            $_SESSION["id"] = $user["id"];
             $_SESSION["role"]=$user["role"];
             return true;
         } else {
@@ -18,8 +18,8 @@ function log_in($username, $password) {
 
 }
 
-function check_role(){
-        if($_SESSION["role"]!=1){
+function check_role($rol){
+        if(!isset($_SESSION["username"]) || $_SESSION["role"]<$rol){
             echo "<html>
                     <head> <meta charset='utf-8'/>
                     </head>
@@ -29,5 +29,17 @@ function check_role(){
             return;
         }
         return; 
+}
+function user_exist($username){
+        mysql_query("SET NAMES utf8");
+        $query = "SELECT * from user WHERE username='".$username."' LIMIT 1";
+        $result = mysql_query($query) or die(mysql_error());
+        $num_rows = mysql_num_rows($result);
+        if ($num_rows == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    
 }
 ?>
