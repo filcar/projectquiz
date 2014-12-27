@@ -12,27 +12,35 @@ if(isset($_SESSION["username"])){
 echo "
 <html>
 <head>
-	<meta charset='utf-8'/>
+    <meta charset='utf-8'/>
+    <link rel='stylesheet' type='text/css' href='layout/main.css'>
 </head>
 <body>
- <h2>Καλώς ήρθατε στο Project quiz</h2>
-	<p>Αν έχεται ήδη έναν λογαριασμό παρακαλώ συνδεθείτε</p>
-        <p>χρησιμοποιώντας το όνομα χρήστη και τον κωδικό σας</p>
+ <div id='header'>Καλώς ήρθατε στο Project quiz</div>
+<div id=nav>
         <form action='includes/login.php' method='post'>
-            Όνομα χρήστη: <input type='text' name='username' /> <br />
-            Κωδικός: <input type='password' name='password' />  <br />
-            <input type='submit' value='Είσοδος'/> <br/>
-            <p><a href='register.php'>Εγγραφείτε τώρα</a></p>
-        </form>
+        <p> Σύνδεση χρήστη<p>
+            <input type='text' name='username' placeholder='Όνομα χρήστη'/> <br /><br />
+            <input type='password' name='password' placeholder='Κωδικός χρήστη'/>  <br /><br />
+            <input type='submit' value='Σύνδεση'/> <br/>
+         </form>
+ 
  ";
 
 if (isset($_GET["error"])){
     if ($_GET["error"] == 1) {
-        echo "Λάθος όνομα χρήστη ή κωδικού πρόσβασης";
+        echo "<div id='error'>Λάθος στοιχεία εισόδου</div>";
     }
 }
 
-echo "
+echo " <br/><br/><p><a href='register.php'>Εγγραφείτε τώρα</a></p>
+</div>
+ <div id='section'>
+    <img src='layout/quiz.jpg' width=300px>
+    <p>Αν έχεται ήδη έναν λογαριασμό παρακαλώ συνδεθείτε<br/>
+           χρησιμοποιώντας το όνομα χρήστη και τον κωδικό σας</p>
+</div> 
+<div id='footer'>copyright (2014). TEISER team(Δομουχτής, Καραντζούλης, Κιοδέλης)</div>
 </body>
 </html>";
 ?>
