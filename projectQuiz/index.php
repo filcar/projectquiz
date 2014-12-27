@@ -17,7 +17,7 @@ echo "
 </head>
 <body>
  <div id='header'>Καλώς ήρθατε στο Project quiz</div>
-<div id=nav>
+<div id=nav><br /><br />
         <form action='includes/login.php' method='post'>
         <p> Σύνδεση χρήστη<p>
             <input type='text' name='username' placeholder='Όνομα χρήστη'/> <br /><br />
@@ -33,9 +33,14 @@ if (isset($_GET["error"])){
     }
 }
 
-echo " <br/><br/><p><a href='register.php'>Εγγραφείτε τώρα</a></p>
+echo "<br/><p><a href='register.php'>Εγγραφείτε τώρα</a></p>
 </div>
  <div id='section'>
+ <p>Στις σελίδες αυτές μπορείται να δοκιμάσετε τις γνώσεις σας<br />
+    παίζοντας κουιζ και απαντώντας στις ερωτήσεις του.</p>
+    <p>Υπάρχει πλήθος κατηγοριών που μπορείται να επιλέξετε<br />
+        και να βαθμολογηθείτε στις επιδόσεις σας!!!<br />
+       Πρέπει όμως πρώτα να συνδεθείτε</p>
     <img src='layout/quiz.jpg' width=300px>
     <p>Αν έχεται ήδη έναν λογαριασμό παρακαλώ συνδεθείτε<br/>
            χρησιμοποιώντας το όνομα χρήστη και τον κωδικό σας</p>
