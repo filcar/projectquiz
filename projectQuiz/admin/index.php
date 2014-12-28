@@ -4,7 +4,8 @@ include_once("../includes/functions.php");
 session_start();
 check_role();
 echo"
-<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
+<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org
+                                            /TR/xhtml1/DTD/xhtml1-strict.dtd\">
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
 	<meta charset='utf-8' />
@@ -29,15 +30,15 @@ echo"
 	$i=0;
 	while($row = mysql_fetch_array($query))
 	{
-		$i++;
-		echo"
-		<tr>
-			<td>".$i."</td>
-			<td>".$row["cat"]."</td>
-			<td>".$row["descr"]."</td>
-			<td><a href='view.php?id=".$row["ID"]."'>Προβολή</a></td>
-			<td><a href='delete.php?id=".$row["ID"]."'>Διαγραφή</a></td>
-			<td><a href='update.php?id=".$row["ID"]."'>Τροποποίηση</a></td>			
+            $i++;
+            echo"
+            <tr>
+                <td>".$i."</td>
+                <td>".$row["cat"]."</td>
+                <td>".$row["descr"]."</td>
+                <td><a href='view.php?id=".$row["ID"]."'>Προβολή</a></td>
+                <td><a href='delete.php?id=".$row["ID"]."'>Διαγραφή</a></td>
+                <td><a href='update.php?id=".$row["ID"]."'>Τροποποίηση</a></td>			
 		</tr>";
 	}
 /*	mysql_close($link); */
