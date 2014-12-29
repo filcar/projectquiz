@@ -45,7 +45,7 @@ echo "<br/><p><a href='register.php'>Εγγραφείτε τώρα</a></p>
     <p>Αν έχεται ήδη έναν λογαριασμό παρακαλώ συνδεθείτε<br/>
            χρησιμοποιώντας το όνομα χρήστη και τον κωδικό σας</p>
 </div> 
-<div id='footer'>copyright (2014). TEISER team(Δομουχτής, Καραντζούλης, Κιοδέλης)</div>
+<div id='footer'>";include "layout/footer.php";echo "</div>
 </body>
 </html>";
 ?>
