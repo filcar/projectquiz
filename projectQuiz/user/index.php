@@ -8,8 +8,8 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
 
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<meta charset='utf-8' />
-
+    <meta charset='utf-8' />
+    <link rel='stylesheet' type='text/css' href='layout/main.css'>
 </head>
 <body>
 
@@ -30,7 +30,7 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
 	<br /><br /> <br /><br /> <br /><br /> <br /><br />
 	<input type='submit' value='Πάτησε για να δεις τις ερωτήσεις' />
 </form>
-
+<div id='footer'>";include "../layout/footer.php";echo "</div>
 </body>
 </html>
 ";
