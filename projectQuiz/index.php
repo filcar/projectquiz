@@ -17,7 +17,7 @@ echo "
 </head>
 <body>
  <div id='header'>Καλώς ήρθατε στο Project quiz</div>
-<div id=nav><br /><br />
+<div id='nav'><br /><br />
         <form action='includes/login.php' method='post'>
         <p> Σύνδεση χρήστη<p>
             <input type='text' name='username' placeholder='Όνομα χρήστη'/> <br /><br />
