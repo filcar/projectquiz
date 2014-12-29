@@ -1,9 +1,10 @@
 <?php
 include_once "connection.php";
 include_once "functions.php";
-$username = $_POST["username"];
-$password = $_POST["password"];
-
+if(isset($_POST["username"], $_POST["password"])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+}
 if(log_in($username, $password))
 {
     if($_SESSION["role"]==1){
