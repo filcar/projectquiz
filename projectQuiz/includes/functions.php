@@ -42,4 +42,17 @@ function user_exist($username){
         }
     
 }
+
+function check_ans($id, $coran) {
+        mysql_query("SET NAMES utf8");
+        $query = ("SELECT * FROM questions WHERE ID='".$id."' and corans='".$coran."'");
+        $result = mysql_query($query) or die(mysql_error());
+        $num_rows = mysql_num_rows($result);
+        if ($num_rows == 1) {
+            return true;
+        } else {
+            return false;
+        }
+
+}
 ?>
