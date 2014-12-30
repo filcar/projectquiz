@@ -24,7 +24,7 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
 	$i=0;
 	while($row = mysql_fetch_array($query))
 	{
-             echo" <option value='".$row["cat"]."'>".$row["cat"]."</option>";
+             echo" <option value='".$row["ID"]."'>".$row["subject_name"]."</option>";
 	}
         //
 echo "	</select>

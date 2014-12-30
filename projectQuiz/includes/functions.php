@@ -55,4 +55,13 @@ function check_ans($id, $coran) {
         }
 
 }
+
+function logout(){
+         session_start();
+        if(isset($_SESSION["username"])){
+            session_destroy();
+         return true;
+        }
+        return false; 
+}
 ?>

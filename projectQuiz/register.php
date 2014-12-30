@@ -17,9 +17,9 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
             <input type='submit' value='Εγγραφή' />
         </form>
         <p>";
-if(isset($_SESSION[msg])) {
-    echo $_SESSION[msg];
-    unset($_SESSION[msg]);
+if(isset($_SESSION["msg"])) {
+    echo $_SESSION["msg"];
+    unset($_SESSION["msg"]);
 }
 echo "</p>
         <h3><a href='index.php'>Επιστροφή</a></h3>

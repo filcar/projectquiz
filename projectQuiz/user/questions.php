@@ -16,18 +16,18 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
 ";
 $epilogi=$_POST["epilogi"];
 $ids = array();
-$all_rows=(mysql_query("SELECT * FROM questions WHERE test='".$epilogi."'"));
+$all_rows=(mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."'"));
 $i=0;
 echo "<form method='post' action='results.php'>";
 while($row=mysql_fetch_array($all_rows))
 {$i++;
 echo "<u><b>".$i."η Ερώτηση: </u> </b> </br>";
 echo $row[1]."</br>";
-echo "<input type='radio' name='q".$i."' value='ans1' />" .$row[3]. "<br />";
-echo "<input type='radio' name='q".$i."' value='ans2' />" .$row[4]. "<br />";
-echo "<input type='radio' name='q".$i."' value='ans3' />" .$row[5]. "<br />";
-echo "<input type='radio' name='q".$i."' value='ans4' />" .$row[6]. "<br />";
-echo "<input type='radio' name='q".$i."' value='ans5' />" .$row[7]. "<br />";
+echo "<input type='radio' name='q".$i."' value='ans1' />" .$row[2]. "<br />";
+echo "<input type='radio' name='q".$i."' value='ans2' />" .$row[3]. "<br />";
+echo "<input type='radio' name='q".$i."' value='ans3' />" .$row[4]. "<br />";
+echo "<input type='radio' name='q".$i."' value='ans4' />" .$row[5]. "<br />";
+echo "<input type='radio' name='q".$i."' value='ans5' />" .$row[6]. "<br />";
 echo "<hr />";
 $ids[$i]=$row["ID"];
 }

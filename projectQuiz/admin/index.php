@@ -34,7 +34,7 @@ echo"
                 Προβολή ερώτησης<br /></td>
         </tr>
     </table>
-    <h2><a href='../index.php'>Έξοδος</a></h2>
+    <h2><a href='../includes/logout.php'>Έξοδος</a></h2>
 </body>
 </html>";
 // Η έξοδος θέλει κάποιο αρχείο logout????
