@@ -16,8 +16,9 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
 <h1>Απαντήστε στις παρακάτω ερωτήσεις</h1>
 ";
 $epilogi=$_POST["epilogi"];
+$nums_q=$_POST["nums_q"];
 $ids = array();
-$all_rows=(mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."'"));
+$all_rows=(mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."' ORDER BY RAND() LIMIT ".$nums_q));
 $i=0;
 echo "<form method='post' action='results.php'>";
 while($row=mysql_fetch_array($all_rows))
