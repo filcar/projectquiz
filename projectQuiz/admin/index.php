@@ -8,43 +8,34 @@ echo"
                                             /TR/xhtml1/DTD/xhtml1-strict.dtd\">
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-	<meta charset='utf-8' />
-	<style type='text/css'>
-		th, td {padding:5px}
-	</style>
+    <meta charset='utf-8' />
+    <style type='text/css'>
+	th, td {padding:5px}
+    </style>
 </head>
 
 <body>
-	<h1>Διαχειριστής του Κουίζ</h1>
-	<h2><a href='insert.php'>Προσθήκη Νέας Κατηγορίας</a></h2>
-	<h2><a href='search.php'>Αναζήτηση Κατηγορίας</a></h2>
-	<table border=1>
-		<tr>
-			<th>A/A</th>
-			<th>Όνομα Κατηγορίας</th>
-			<th>Περιγραφή Κατηγορίας</th>
-			<th colspan='3'><br /></th>
-		</tr>";
-
-	$query = mysql_query("SELECT * FROM subjects");
-	$i=0;
-	while($row = mysql_fetch_array($query))
-	{
-            $i++;
-            echo"
-            <tr>
-                <td>".$i."</td>
-                <td>".$row["cat"]."</td>
-                <td>".$row["descr"]."</td>
-                <td><a href='view.php?id=".$row["ID"]."'>Προβολή</a></td>
-                <td><a href='delete.php?id=".$row["ID"]."'>Διαγραφή</a></td>
-                <td><a href='update.php?id=".$row["ID"]."'>Τροποποίηση</a></td>			
-		</tr>";
-	}
-/*	mysql_close($link); */
-echo"
-	</table>
+    <h1>Διαχειριστής του Κουίζ</h1>
+    <table border=1>
+        <tr>
+            <th><h2><a href='categories.php'>Διαχείριση Κατηγοριών</a></h2></th>
+            <th><h2><a href='questions.php'>Διαχείριση Ερωτήσεων</a></h2></th>
+        </tr>
+        <tr>
+            <td>Προσθήκη νέας κατηγορίας<br />
+                Διαγραφή κατηγορίας<br />
+                Τροποποίηση κατηγορίας<br />
+                Αναζήτηση κατηγορίας<br />
+                Προβολή κατηγορίας<br /></td>
+            <td>Προσθήκη νέας ερώτησης<br />
+                Διαγραφή ερώτησης<br />
+                Τροποποίηση ερώτησης<br />
+                Αναζήτηση ερώτησης<br />
+                Προβολή ερώτησης<br /></td>
+        </tr>
+    </table>
+    <h2><a href='../index.php'>Έξοδος</a></h2>
 </body>
 </html>";
-
+// Η έξοδος θέλει κάποιο αρχείο logout????
 ?>
