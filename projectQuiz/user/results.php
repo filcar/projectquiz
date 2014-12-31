@@ -2,6 +2,7 @@
 require_once("../includes/connection.php");
 include_once("../includes/functions.php");
 session_start();
+check_role("0");
 $ids=$_SESSION["ids"];
 echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
 
