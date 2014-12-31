@@ -2,7 +2,10 @@
 require_once("../includes/connection.php");
 include_once("../includes/functions.php");
 session_start();
-check_role();
+check_role(1);
+
+$message=$_GET["message"];
+
 echo"
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org
                                             /TR/xhtml1/DTD/xhtml1-strict.dtd\">
@@ -40,7 +43,14 @@ echo"
 	</tr>";
 	}
 echo"
-    </table>
+    </table>";
+    
+if($message=="successupdate")
+    echo "<p><b><br />ΣΥΓΧΑΡΗΤΗΡΙΑ:<br />Η τροποποίηση της κατηγορίας έγινε επιτυχώς!</b></p>";
+if($message=="incomplete")
+    echo "<p><b><br />ΠΡΟΣΟΧΗ:<br />Πρέπει να συμπληρώσετε όλα τα πεδία της φόρμας!</b></p>";
+
+echo"
 </body>
 </html>";
 
