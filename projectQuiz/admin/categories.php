@@ -49,6 +49,8 @@ if($message=="successupdate")
     echo "<p><b><br />ΣΥΓΧΑΡΗΤΗΡΙΑ:<br />Η τροποποίηση της κατηγορίας έγινε επιτυχώς!</b></p>";
 if($message=="incomplete")
     echo "<p><b><br />ΠΡΟΣΟΧΗ:<br />Πρέπει να συμπληρώσετε όλα τα πεδία της φόρμας!</b></p>";
+if($message=="successinsert")
+    echo "<p><b><br />ΣΥΓΧΑΡΗΤΗΡΙΑ:<br />Η προσθήκη της κατηγορίας έγινε επιτυχώς!</b></p>";
 
 echo"
 </body>

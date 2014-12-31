@@ -8,7 +8,6 @@ if(!$link)
 {
 	die("Could not connect to host");
 }
-/*echo "Connected successfully to host\n\n";*/
 
 /***********************************************/
 /* Για να βλέπουμε Ελληνικά στη βάση δεδομένων */
@@ -23,6 +22,7 @@ if(!$seldb)
 {
 	die("Could not connect to database");
 }
-/*echo "Connected successfully to database\n\n";*/
+
+error_reporting(0);
 
 ?>

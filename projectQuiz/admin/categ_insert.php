@@ -10,8 +10,8 @@ echo"
 <body>
 	<h1>Διαχειριστής του Κουίζ</h1>
 	<h2>Προσθήκη Νέας Κατηγορίας</h2>
-	<h3><a href='index.php'>Επιστροφή</a></h3>
-	<form method='post' action='insert-submit.php'>
+	<h3><a href='categories.php'>Επιστροφή</a></h3>
+	<form method='post' action='categ_insert-submit.php'>
 		Όνομα Κατηγορίας: <input type='text' name='cat' /><br /><br />
 		Περιγραφή Κατηγορίας: <input type='text' name='descr' /><br /><br />
 		<input type='submit' name='addcat' value='Προσθήκη' />
