@@ -15,7 +15,7 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
 <body>
 
 
-<div id='header'>Καλώς ήρθατε στο Μαθηματικό Quiz μας</div>
+<div id='header'>Καλώς ήρθατε στο Quiz μας</div>
 <div id=nav><p>Επιλέξτε μία από τις παρακάτω θεματικές ενότητες</p>
 <form method='post' action='questions.php'>
 Ενότητα:<select name='epilogi'>";
