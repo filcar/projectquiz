@@ -34,7 +34,7 @@ echo "</head>
 <body  onload='setCountDown();'>
 <div id='remain'>"; echo "$remainingSeconds seconds"; echo "</div>
 <div id='header'>Απαντήστε στις παρακάτω ερωτήσεις</div>
-<div id=nav_user><br/>Επιλέξτε τις σωστές απαντήσεις και πατήστε το κουμπί στο τέλος της σελίδας ια υποβολή <br/>
+<div id=nav_user><br/>Επιλέξτε τις σωστές απαντήσεις και πατήστε το κουμπί στο τέλος της σελίδας για υποβολή <br/>
 <br/>Πρέπει να ολοκληρώσετε το Quiz μέσα στην προθεσμία του χρόνου<br/><br/>
 Κάθε σωστή απάντηση λαμβάνει 10 βαθμούς<br/></div>
 <div id=section_user>
