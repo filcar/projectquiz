@@ -20,7 +20,7 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
       function setCountDown ()
         {
         seconds--;
-        document.getElementById("remain").innerHTML = seconds+" seconds";
+        document.getElementById("remain").innerHTML = seconds+" δευτερόλεπτα";
         SD=window.setTimeout( "setCountDown()", 1000 );
         if (seconds == '00') { seconds = "00"; window.clearTimeout(SD);
             window.alert("Ο χρόνος δυστυχώς έληξε. Πάτα OK για να συνεχίσεις!"); // change timeout message as required
@@ -35,8 +35,11 @@ echo "</head>
 <div id='remain'>"; echo "$remainingSeconds seconds"; echo "</div>
 <div id='header'>Απαντήστε στις παρακάτω ερωτήσεις</div>
 <div id=nav_user><br/>Επιλέξτε τις σωστές απαντήσεις και πατήστε το κουμπί στο τέλος της σελίδας για υποβολή <br/>
-<br/>Πρέπει να ολοκληρώσετε το Quiz μέσα στην προθεσμία του χρόνου<br/><br/>
-Κάθε σωστή απάντηση λαμβάνει 10 βαθμούς<br/></div>
+    <br/>Πρέπει να ολοκληρώσετε το Quiz μέσα στην προθεσμία του χρόνου<br/><br/>
+     Κάθε σωστή απάντηση λαμβάνει 10 βαθμούς<br/></div>
+<div id='menu'>";
+        include ("../layout/menu.php");
+echo "</div>
 <div id=section_user>
 ";
 $ids = array();

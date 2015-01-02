@@ -37,6 +37,9 @@ echo "	</select>
 	<input type='submit' value='Ξεκίνα το Quiz' />
 </form>
 </div>
+        <div id='menu'>";
+        include ("../layout/menu.php");
+        echo "</div>
 <div id='footer'>";include "../layout/footer.php";echo "</div>
 </body>
 </html>
