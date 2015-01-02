@@ -33,7 +33,7 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
 echo "</head>
 <body  onload='setCountDown();'>
 <div id='remain'>"; echo "$remainingSeconds seconds"; echo "</div>
-<div id='header'>Απαντήστε στις παρακάτω ερωτήσεις</div>
+<div id='header'>Ερωτήσεις Quiz</div>
 <div id=nav_user><br/>Επιλέξτε τις σωστές απαντήσεις και πατήστε το κουμπί στο τέλος της σελίδας για υποβολή <br/>
     <br/>Πρέπει να ολοκληρώσετε το Quiz μέσα στην προθεσμία του χρόνου<br/><br/>
      Κάθε σωστή απάντηση λαμβάνει 10 βαθμούς<br/></div>
@@ -41,6 +41,7 @@ echo "</head>
         include ("../layout/menu.php");
 echo "</div>
 <div id=section_user>
+<h3>Απαντήστε στις παρακάτω ερωτήσεις</h3>
 ";
 $ids = array();
 $all_rows=(mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."' ORDER BY RAND() LIMIT ".$nums_q));
@@ -48,8 +49,8 @@ $i=0;
 echo "<form method='post' action='results.php'>";
 while($row=mysql_fetch_array($all_rows))
 {$i++;
-echo "<u><b>".$i."η Ερώτηση: </u> </b> </br>";
-echo $row[1]."</br>";
+echo "<table><tr><td><img src='../layout/question.jpg' width=30/></td><td><u><b>".$i."η Ερώτηση. ";
+echo $row[1]."</u> </b></td></tr></table>";
 echo "<input type='radio' name='q".$i."' value='ans1' />" .$row[2]. "<br />";
 echo "<input type='radio' name='q".$i."' value='ans2' />" .$row[3]. "<br />";
 echo "<input type='radio' name='q".$i."' value='ans3' />" .$row[4]. "<br />";

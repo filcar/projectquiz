@@ -1,5 +1,6 @@
 #error {
-    background-color:ff0000;color:white; 
+    background-color:#ff0000;
+    color:white; 
     font-family:arial; font-size:12px;
     text-align:center; width:200px;
     float:left;
@@ -15,12 +16,15 @@
     position:left;
     background-color:#FFFF99;
     text-align:left;
-    padding:5px;
+    padding-left: 220px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 a.hidden {
     visibility: hidden;
 }
+
 #nav {
     line-height:30px;
     background-color:#eeeeee;

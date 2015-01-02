@@ -10,7 +10,9 @@ if(isset($_SESSION["username"])){
     }
 }
 echo "
-<html>
+<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org
+                                            /TR/xhtml1/DTD/xhtml1-strict.dtd\">
+<html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
     <meta charset='utf-8'/>
     <link rel='stylesheet' type='text/css' href='layout/main.css'>
@@ -41,9 +43,10 @@ echo "<br/><p><a href='register.php'>Εγγραφείτε τώρα</a></p>
     <p>Υπάρχει πλήθος κατηγοριών που μπορείται να επιλέξετε<br />
         και να βαθμολογηθείτε στις επιδόσεις σας!!!<br />
        Πρέπει όμως πρώτα να συνδεθείτε</p>
-    <img src='layout/quiz.jpg' width=300px>
+    <img src='layout/quiz.jpg' width=300px/>
     <p>Αν έχεται ήδη έναν λογαριασμό παρακαλώ συνδεθείτε<br/>
-           χρησιμοποιώντας το όνομα χρήστη και τον κωδικό σας</p>
+       χρησιμοποιώντας το όνομα χρήστη και τον κωδικό σας<br/>
+       διαφορετικά ακολουθήστε την διαδικασία <a href='register.php'>εγγραφής</a></p>
 </div> 
 <div id='footer'>";include "layout/footer.php";echo "</div>
 </body>
