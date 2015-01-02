@@ -11,6 +11,16 @@
     text-align:center;
     padding:5px;
 }
+#menu {
+    position:left;
+    background-color:#FFFF99;
+    text-align:left;
+    padding:5px;
+}
+
+a.hidden {
+    visibility: hidden;
+}
 #nav {
     line-height:30px;
     background-color:#eeeeee;
