@@ -6,7 +6,7 @@ session_start();
 check_role("0");
 if (isset($_POST["epilogi"])) $epilogi = $_POST["epilogi"];
 if (isset($_POST["nums_q"])) $nums_q=$_POST["nums_q"];
-$targetTime = time() + ($nums_q * 20);
+$targetTime = time() + ($nums_q * 30);
 $actualTime = time();
 $remainingSeconds = $targetTime - $actualTime;
 echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">

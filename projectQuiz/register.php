@@ -14,11 +14,13 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
         <div id='menu'>";
         include ("layout/menu.php");
         echo "</div>
-        <div id=section>
+        <div id=section_user>
         <form method='post' action='includes/register-submit.php'>
-            Όνοματεπώνυμο χρήστη: <input type='text' name='fullname' /><br /><br />
-            Όνομα χρήστη: <input type='text' name='username' /><br /><br />
-            Κωδικός χρήστη: <input type='password' name='password' /><br /><br />
+            <table> 
+              <tr><td>Όνοματεπώνυμο χρήστη:</td><td width='300'><input type='text' name='fullname' /></td></tr>
+              <tr><td>Όνομα χρήστη:</td><td> <input type='text' name='username' /></td></tr>
+              <tr><td>Κωδικός χρήστη:</td><td> <input type='password' name='password' /></td></tr>
+            </table>    
             <input type='submit' value='Εγγραφή' />
         </form>
         <p>";
