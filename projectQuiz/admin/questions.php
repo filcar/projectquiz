@@ -19,10 +19,10 @@ echo"
 
 <body>
     <h1>Διαχειριστής του Κουίζ</h1>
-    
-<p>Επιλέξτε μία από τις παρακάτω θεματικές ενότητες</p>
+    <p>Επιλέξτε μία από τις παρακάτω Κατηγορίες</p>
     <form method='post' action='questions-submit.php'>
-    Ενότητα:<select name='epilogi'>";
+    Κατηγορία: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name='epilogi'>";
         $query = mysql_query("SELECT * FROM subjects");
 	while($row = mysql_fetch_array($query))
 	{
@@ -30,21 +30,10 @@ echo"
                    </option>";
 	}
 echo "	</select>
-    <br /><br /> <br /><br />
-	<input type='submit' value='Ξεκίνα το Quiz' />
+    <br /><br /><br />
+	<input type='submit' value='Συνέχισε' />
     </form>
-
-<br /><br /> <br /><br />
-
-    <table border=1>
-        <tr>
-            <th>Κωδικός</th>
-            <th>Όνομα Κατηγορίας</th>
-            <th>Περιγραφή Κατηγορίας</th>
-            <th colspan='3'><br /></th>
-	</tr>";
-
-
-
+</body>
+</html>";
 
 ?>
