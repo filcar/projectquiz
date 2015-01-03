@@ -16,7 +16,7 @@ echo"
 
 <body>
     <h1>Διαχειριστής του Κουίζ</h1>
-    <p>Επιλέξτε μία από τις παρακάτω κατηγορίες</p>
+    <p>Επιλέξτε μία από τις παρακάτω Κατηγορίες</p>
     <form method='post' action='questions-submit.php'>
     Κατηγορία: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select name='epilogi'>";
