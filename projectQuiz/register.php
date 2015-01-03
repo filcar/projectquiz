@@ -6,23 +6,31 @@ echo"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.
 <html xmlns='http://www.w3.org/1999/xhtml'>
     <head>
         <meta charset='utf-8' />
-
+    <link rel='stylesheet' type='text/css' href='layout/main.css'>
     </head>
     <body>
-        <h2>Εγγραφή νέου χρήστη</h2>
+        <div id='header'>Εγγραφή νέου χρήστη</div>
+        <div id='nav'>.</div>
+        <div id='menu'>";
+        include ("layout/menu.php");
+        echo "</div>
+        <div id=section_user>
         <form method='post' action='includes/register-submit.php'>
-            Όνοματεπώνυμο χρήστη: <input type='text' name='fullname' /><br /><br />
-            Όνομα χρήστη: <input type='text' name='username' /><br /><br />
-            Κωδικός χρήστη: <input type='password' name='password' /><br /><br />
+            <table> 
+              <tr><td>Όνοματεπώνυμο χρήστη:</td><td width='300'><input type='text' name='fullname' /></td></tr>
+              <tr><td>Όνομα χρήστη:</td><td> <input type='text' name='username' /></td></tr>
+              <tr><td>Κωδικός χρήστη:</td><td> <input type='password' name='password' /></td></tr>
+            </table>    
             <input type='submit' value='Εγγραφή' />
         </form>
         <p>";
-if(isset($_SESSION[msg])) {
-    echo $_SESSION[msg];
-    unset($_SESSION[msg]);
+if(isset($_SESSION["msg"])) {
+    echo $_SESSION["msg"];
+    unset($_SESSION["msg"]);
 }
 echo "</p>
-        <h3><a href='index.php'>Επιστροφή</a></h3>
+    </div>
+        <div id='footer'>";include "./layout/footer.php";echo "</div>
     </body>
 </html>";
 ?>
