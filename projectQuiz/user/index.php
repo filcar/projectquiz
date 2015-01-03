@@ -27,7 +27,12 @@ echo"
                    </option>";
 	}
 echo "	</select>
-	<br /><br /> <br /><br /> <br /><br /> <br /><br />
+	<br /><br /> <br />
+    Πλήθος Ερωτήσεων:<select name='nums_q'>
+        <option value='5'>ΠΕΝΤΕ</option>
+        <option value='10'>ΔΕΚΑ</option>
+    </SELECT>
+    <br /><br /> <br /><br />
 	<input type='submit' value='Ξεκίνα το Quiz' />
     </form>
 </div>
