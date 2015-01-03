@@ -9,32 +9,29 @@ echo"
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
     <meta charset='utf-8' />
-    <style type='text/css'>
-	th, td {padding:5px}
-    </style>
+    <link rel='stylesheet' type='text/css' href='../layout/main.css'>
 </head>
 
 <body>
-    <h1>Διαχειριστής του Κουίζ</h1>
-    <table border=1>
-        <tr>
-            <th><h2><a href='categories.php'>Διαχείριση Κατηγοριών</a></h2></th>
-            <th><h2><a href='questions.php'>Διαχείριση Ερωτήσεων</a></h2></th>
-        </tr>
-        <tr>
-            <td>Προσθήκη νέας κατηγορίας<br />
-                Διαγραφή κατηγορίας<br />
-                Τροποποίηση κατηγορίας<br />
-                Αναζήτηση κατηγορίας<br />
-                Προβολή κατηγορίας<br /></td>
-            <td>Προσθήκη νέας ερώτησης<br />
-                Διαγραφή ερώτησης<br />
-                Τροποποίηση ερώτησης<br />
-                Αναζήτηση ερώτησης<br />
-                Προβολή ερώτησης<br /></td>
-        </tr>
-    </table>
-    <h2><a href='../includes/logout.php'>Έξοδος</a></h2>
+    <div id='header'>Διαχειριστής του Κουίζ</div>
+    <div id='nav'>.</div>
+    <div id='menu'>";include ("../layout/menu.php");echo "</div>
+    <div id='section'>
+    <h4><a href='categories.php'>Διαχείριση Κατηγοριών</a></h4>
+        Προσθήκη νέας κατηγορίας<br />
+        Διαγραφή κατηγορίας<br />
+        Τροποποίηση κατηγορίας<br />
+        Αναζήτηση κατηγορίας<br />
+        Προβολή κατηγορίας<br />
+    <hr/>
+    <h4><a href='questions.php'>Διαχείριση Ερωτήσεων</a></h4>
+            Προσθήκη νέας ερώτησης<br />
+            Διαγραφή ερώτησης<br />
+            Τροποποίηση ερώτησης<br />
+            Αναζήτηση ερώτησης<br />
+            Προβολή ερώτησης<br />
+
+    </div>
 </body>
 </html>";
 // Η έξοδος θέλει κάποιο αρχείο logout????
