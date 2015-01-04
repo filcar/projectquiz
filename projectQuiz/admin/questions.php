@@ -6,6 +6,7 @@ session_start();
 check_role(1);
 
 $epilogi=$_POST["epilogi"];
+$_SESSION["epilogi"]=$epilogi;
 $categ_questions = (mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."'"));
 $categ_query = (mysql_query("SELECT * FROM subjects WHERE ID='".$epilogi."'"));
 $categ_row = mysql_fetch_array($categ_query);
@@ -36,8 +37,9 @@ echo "	</select>
     <br />
 	<input type='submit' value='Συνέχισε' />
     </form>
-        <br/><a href='question_insert.php'>Nέα Ερώτηση</a>
-        <br/><a href='question_search.php'>Αναζήτηση Ερώτησης</a>
+        
+<br/><a href='question_insert.php'>Nέα Ερώτηση</a>
+<br/><a href='question_search.php'>Αναζήτηση Ερώτησης</a>
     </div>
     <div id='menu'>";include ("../layout/menu.php");echo "</div>
     <div id='section_user'>
@@ -62,7 +64,6 @@ echo "	</select>
             <a href='question_update.php?id=".$qrow["ID"]."'>Τροποποίηση</a></td>			
 	</tr>
         <tr>
-
             <td> <b><u>Απάντηση 1:</u>&nbsp;&nbsp;&nbsp;</b>".$qrow["ans1"]."</td>
         </tr>
         <tr>

@@ -9,8 +9,6 @@ $id=$_GET["id"];
 	
 mysql_query("DELETE FROM questions WHERE ID='".$id."'");
 
-header("Location: categories.php");
+header("Location: questions.php");
 	
-
 ?>
-
