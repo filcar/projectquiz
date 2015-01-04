@@ -27,5 +27,4 @@ if(!$seldb)
 
 error_reporting(0);
 
-
 ?>
