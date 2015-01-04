@@ -41,6 +41,7 @@ echo "	</select>
 <br/><a href='question_insert.php'>Nέα Ερώτηση</a>
 <br/><a href='question_search.php'>Αναζήτηση Ερώτησης</a>
     </div>
+    
     <div id='menu'>";include ("../layout/menu.php");echo "</div>
     <div id='section_user'>
     <h2>Κατηγορία:&nbsp;&nbsp;&nbsp".$categ_row["subject_name"]."&nbsp;&nbsp;&nbsp;(".$categ_row["description"].")</h2>
