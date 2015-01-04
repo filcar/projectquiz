@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 2.10.3
 -- http://www.phpmyadmin.net
 --
 -- Φιλοξενητής: 127.0.0.1
@@ -7,24 +7,19 @@
 -- Έκδοση διακομιστή: 5.5.39
 -- Έκδοση PHP: 5.4.31
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Βάση δεδομένων: `3724_3725_3726`
---
+-- 
+-- Βάση: `3724_3725_3726`
+-- 
+CREATE DATABASE `3724_3725_3726` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `3724_3725_3726`;
 
 -- --------------------------------------------------------
 
---
--- Δομή πίνακα για τον πίνακα `questions`
---
+-- 
+-- Δομή Πίνακα για τον Πίνακα `questions`
+-- 
 
 CREATE TABLE IF NOT EXISTS `questions` (
 `ID` int(11) NOT NULL,
@@ -38,9 +33,9 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `subject_ID` int(11) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
---
--- Άδειασμα δεδομένων του πίνακα `questions`
---
+-- 
+-- 'Αδειασμα δεδομένων του πίνακα `questions`
+-- 
 
 INSERT INTO `questions` (`ID`, `question`, `ans1`, `ans2`, `ans3`, `ans4`, `ans5`, `corans`, `subject_ID`) VALUES
 (1, 'Τα κύρια στοιχεία ενός τριγώνου είναι:', 'οι πλευρές και οι διχοτόμοι', 'οι πλευρές και τα ύψη', 'οι πλευρές και οι γωνίες', 'οι γωνίες και οι διχοτόμοι', 'οι γωνίες και οι διάμεσοι', 'ans3', 2),
@@ -63,22 +58,28 @@ INSERT INTO `questions` (`ID`, `question`, `ans1`, `ans2`, `ans3`, `ans4`, `ans5
 
 -- --------------------------------------------------------
 
---
--- Δομή πίνακα για τον πίνακα `scores`
---
+-- 
+-- Δομή Πίνακα για τον Πίνακα `scores`
+-- 
 
-CREATE TABLE IF NOT EXISTS `scores` (
-`ID` int(11) NOT NULL,
+CREATE TABLE `scores` (
+  `ID` int(11) NOT NULL auto_increment,
   `user_name` char(5) NOT NULL,
   `score` int(11) NOT NULL,
-  `subject_ID` int(11) NOT NULL
+  `subject_ID` int(11) NOT NULL,
+  PRIMARY KEY  (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- 'Αδειασμα δεδομένων του πίνακα `scores`
+-- 
+
 
 -- --------------------------------------------------------
 
---
--- Δομή πίνακα για τον πίνακα `subjects`
---
+-- 
+-- Δομή Πίνακα για τον Πίνακα `subjects`
+-- 
 
 CREATE TABLE IF NOT EXISTS `subjects` (
 `ID` int(11) NOT NULL,
@@ -86,9 +87,9 @@ CREATE TABLE IF NOT EXISTS `subjects` (
   `description` varchar(80) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
---
--- Άδειασμα δεδομένων του πίνακα `subjects`
---
+-- 
+-- 'Αδειασμα δεδομένων του πίνακα `subjects`
+-- 
 
 INSERT INTO `subjects` (`ID`, `subject_name`, `description`) VALUES
 (1, 'ΑΛΓΕΒΡΑ_Α', 'ΑΛΓΕΒΡΑ Α ΛΥΚΕΙΟΥ'),
@@ -102,21 +103,23 @@ INSERT INTO `subjects` (`ID`, `subject_name`, `description`) VALUES
 
 -- --------------------------------------------------------
 
---
--- Δομή πίνακα για τον πίνακα `user`
---
+-- 
+-- Δομή Πίνακα για τον Πίνακα `user`
+-- 
 
-CREATE TABLE IF NOT EXISTS `user` (
-`id` int(11) NOT NULL,
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
   `username` char(5) NOT NULL,
   `password` char(5) NOT NULL,
-  `role` tinyint(1) NOT NULL DEFAULT '0',
-  `fullname` varchar(255) NOT NULL
+  `role` tinyint(1) NOT NULL default '0',
+  `fullname` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
---
--- Άδειασμα δεδομένων του πίνακα `user`
---
+-- 
+-- 'Αδειασμα δεδομένων του πίνακα `user`
+-- 
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`, `fullname`) VALUES
 (1, 'admin', 'admin', 1, ''),
