@@ -3,7 +3,7 @@
 /**************************/
 /* Σύνδεση με Εξυπηρετητή */
 /**************************/
-$link = mysql_connect("localhost", "root", "27188");
+$link = mysql_connect("localhost", "root", "");
 if(!$link)
 {
 	die("Could not connect to host");
@@ -24,5 +24,8 @@ if(!$seldb)
 	die("Could not connect to database");
 }
 /*echo "Connected successfully to database\n\n";*/
+
+error_reporting(0);
+
 
 ?>
