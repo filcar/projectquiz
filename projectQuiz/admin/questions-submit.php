@@ -38,10 +38,10 @@ echo "	</select>
     </div>
     <div id='menu'>";include ("../layout/menu.php");echo "</div>
     <div id='section_user'>
-    <h2>Κατηγορία: ".$categ_row["subject_name"]." (".$categ_row["description"].")</h2>
+    <h2>Κατηγορία:&nbsp;&nbsp;&nbsp".$categ_row["subject_name"]."&nbsp;&nbsp;&nbsp;(".$categ_row["description"].")</h2>
     <table border=1>
         <tr>
-            <th>Κωδικός</th>
+            <th>Κωδικός Ερώτησης</th>
             <th>Ερώτηση</th>
             <th>Σωστή Απάντηση</th>
             <th colspan='2'><br /></th>

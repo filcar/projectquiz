@@ -20,7 +20,7 @@ echo"
     <h3><a href='categories.php'>Επιστροφή</a></h3>";
 
     $id=$_GET["id"];
-    $query1 = mysql_query("select * from subjects where ID=$id");
+    $query1 = mysql_query("select * from subjects where ID='".$id."'");
     while($row1 = mysql_fetch_array($query1))
     {
     echo"
