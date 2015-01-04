@@ -1,7 +1,10 @@
 <?php
 
 require_once("../includes/connection.php");
+include_once("../includes/functions.php");
 session_start();
+check_role(1);
+
 $epilogi=$_POST["epilogi"];
 $categ_questions = (mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."'"));
 $categ_query = (mysql_query("SELECT * FROM subjects WHERE ID='".$epilogi."'"));
