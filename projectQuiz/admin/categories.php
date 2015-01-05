@@ -11,16 +11,18 @@ echo"
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
     <meta charset='utf-8' />
-    <style type='text/css'>
-    	th, td {padding:5px}
-    </style>
+    <link rel='stylesheet' type='text/css' href='../layout/main.css'>
 </head>
 
 <body>
-    <h1>Διαχειριστής του Κουίζ</h1>
+    <div id='header'>Διαχειριστής του Κουίζ</div>
+    <div id='nav'>
+
     <h2><a href='categ_insert.php'>Προσθήκη Νέας Κατηγορίας</a></h2>
     <h2><a href='categ_search.php'>Αναζήτηση Κατηγορίας</a></h2>
     <h3><a href='index.php'>Επιστροφή</a></h3>
+    
+    </div>
 
     <table border=1>
         <tr>
