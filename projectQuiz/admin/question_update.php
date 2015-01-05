@@ -33,7 +33,7 @@ echo"
     <h3><a href='questions.php'>Επιστροφή</a></h3>
     <br /><br />
     <form method='post' action='question_update-submit.php'>
-        Ερώτηση: <input type='text' name='question' value='".$question."' /><br /><br />
+        Ερώτηση: <input type='text' name='question' value='".$question."' maxlength='255' size='80' /><br /><br />
 	Απάντηση 1: <input type='text' name='ans1' value='".$ans1."' /><br /><br />
         Απάντηση 2: <input type='text' name='ans2' value='".$ans2."' /><br /><br />
         Απάντηση 3: <input type='text' name='ans3' value='".$ans3."' /><br /><br />

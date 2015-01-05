@@ -17,13 +17,12 @@ echo"
 <body>
     <div id='header'>Διαχειριστής του Κουίζ</div>
     <div id='nav'>
-
     <h2><a href='categ_insert.php'>Προσθήκη Νέας Κατηγορίας</a></h2>
     <h2><a href='categ_search.php'>Αναζήτηση Κατηγορίας</a></h2>
     <h3><a href='index.php'>Επιστροφή</a></h3>
     
     </div>
-
+<div id='menu'>";include ("../layout/menu.php");echo "</div>
     <table border=1>
         <tr>
             <th>Κωδικός</th>

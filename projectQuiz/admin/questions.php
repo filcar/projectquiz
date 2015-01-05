@@ -6,7 +6,10 @@ session_start();
 check_role(1);
 
 $epilogi=$_POST["epilogi"];
-$_SESSION["epilogi"]=$epilogi;
+//if(isset($_SESSION["epilogi"])) {$epilogi=$_SESSION["epilogi"];}
+//else 
+    {$_SESSION["epilogi"]=$epilogi;}
+
 $categ_questions = (mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."'"));
 $categ_query = (mysql_query("SELECT * FROM subjects WHERE ID='".$epilogi."'"));
 $categ_row = mysql_fetch_array($categ_query);
@@ -47,7 +50,7 @@ echo "	</select>
     <h2>Κατηγορία:&nbsp;&nbsp;&nbsp".$categ_row["subject_name"]."&nbsp;&nbsp;&nbsp;(".$categ_row["description"].")</h2>
     <table border=1>
         <tr>
-            <th>Κωδικός Ερώτησης</th>
+            <th>Κωδικός</th>
             <th>Ερώτηση</th>
             <th>Σωστή Απάντηση</th>
             <th colspan='2'><br /></th>
@@ -57,9 +60,9 @@ echo "	</select>
 	{
         echo"
         <tr>
-            <td rowspan='6'>".$qrow["ID"]."</td>
+            <td class='kenter' rowspan='6'>".$qrow["ID"]."</td>
             <td class='quest'>".$qrow["question"]."</td>
-            <td rowspan='6'>".$qrow["corans"]."</td>  
+            <td class='kenter' rowspan='6'>".$qrow["corans"]."</td>  
             <td rowspan='6'><a href='question_view.php?id=".$qrow["ID"]."'>Προβολή</a><br/><br/>
             <a href='question_delete.php?id=".$qrow["ID"]."'>Διαγραφή</a><br/><br/>
             <a href='question_update.php?id=".$qrow["ID"]."'>Τροποποίηση</a></td>			

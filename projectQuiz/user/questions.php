@@ -4,6 +4,7 @@ include("../includes/connection.php");
 include_once("../includes/functions.php");
 session_start();
 check_role("0");
+
 if (isset($_POST["epilogi"])) 
    $epilogi = $_POST["epilogi"];
 if (isset($_POST["nums_q"])) 
@@ -48,7 +49,6 @@ echo "</div>
 $ids = array();
 $quest = array();
 $correct = array();
-$given = array();
 
 $all_rows=(mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."' ORDER BY RAND() LIMIT ".$nums_q));
 $i=0;
@@ -67,14 +67,13 @@ echo "<hr />";
 $ids[$i]=$row["ID"];
 $quest[$i]=$row["question"];
 $correct[$i]=$row[$row["corans"]];
-$given[$i]=$row[""];
+$given[$i]=$row[selected];
 }
 $_SESSION["i"]=$i;
 $_SESSION["ids"]=$ids;
 $_SESSION["quest"]=$quest;
 $_SESSION["correct"]=$correct;
-$_SESSION["given"]=$given;
-
+$_SESSION["epilogi"]=$epilogi;
 echo"
 <br /><br />
 

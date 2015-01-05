@@ -11,6 +11,7 @@ function log_in($username, $password) {
             $_SESSION["username"] = $user["username"];
             $_SESSION["id"] = $user["id"];
             $_SESSION["role"]=$user["role"];
+            $_SESSION["fullname"]=$user["fullname"];
             return true;
         } else {
             return false;

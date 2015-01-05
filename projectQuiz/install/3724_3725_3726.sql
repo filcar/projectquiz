@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 05 Ιαν 2015 στις 16:36:21
+-- Χρόνος δημιουργίας: 05 Ιαν 2015 στις 20:11:44
 -- Έκδοση διακομιστή: 5.5.39
 -- Έκδοση PHP: 5.4.31
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `ans5` varchar(255) NOT NULL DEFAULT '',
   `corans` varchar(8) NOT NULL DEFAULT '',
   `subject_ID` int(11) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
 -- Άδειασμα δεδομένων του πίνακα `questions`
@@ -85,10 +85,28 @@ INSERT INTO `questions` (`ID`, `question`, `ans1`, `ans2`, `ans3`, `ans4`, `ans5
 DROP TABLE IF EXISTS `scores`;
 CREATE TABLE IF NOT EXISTS `scores` (
 `ID` int(11) NOT NULL,
-  `user_name` char(5) NOT NULL,
+  `user_name` char(10) NOT NULL,
   `score` int(11) NOT NULL,
-  `subject_ID` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `subject_ID` int(11) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `playdate` varchar(15) DEFAULT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `scores`
+--
+
+INSERT INTO `scores` (`ID`, `user_name`, `score`, `subject_ID`, `fullname`, `playdate`) VALUES
+(1, 'user1', 4, 0, '', '0000-00-00 00:0'),
+(2, 'user1', 4, 0, '', '0000-00-00 00:0'),
+(3, 'user1', 4, 11, 'ioannis', '0000-00-00 00:0'),
+(4, 'user1', 40, 11, 'ioannis', '0000-00-00 00:0'),
+(5, 'user1', 40, 11, 'ioannis', '0000-00-00 00:0'),
+(6, 'user1', 40, 2, 'ioannis', '0000-00-00 00:0'),
+(7, 'user3', 40, 11, 'fullname', '0000-00-00 00:0'),
+(8, 'user3', 20, 2, 'fullname', 'hjjhhjhjjh'),
+(9, 'user3', 40, 11, 'fullname', '05/01/15'),
+(10, 'user3', 20, 2, 'fullname', '0505/0101/15151');
 
 -- --------------------------------------------------------
 
@@ -101,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `subjects` (
 `ID` int(11) NOT NULL,
   `subject_name` varchar(20) NOT NULL DEFAULT '',
   `description` varchar(80) NOT NULL DEFAULT ''
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Άδειασμα δεδομένων του πίνακα `subjects`
@@ -112,10 +130,10 @@ INSERT INTO `subjects` (`ID`, `subject_name`, `description`) VALUES
 (2, 'ΓΕΩΜΕΤΡΙΑ_Α', 'ΓΕΩΜΕΤΡΙΑ Α ΛΥΚΕΙΟΥ'),
 (3, 'ΑΛΓΕΒΡΑ_Β', 'ΑΛΓΕΒΡΑ Β ΛΥΞΕΙΟΥ'),
 (4, 'ΓΕΩΜΕΤΡΙΑ_Β', 'ΓΕΩΜΕΤΡΙΑ Β ΛΥΚΕΙΟΥ'),
-(5, 'ΜΑΘΗΜΑΤΙΚΑ_Β', 'ΜΑΘΗΜΑΤΙΚΑ ΚΑΤΕΥΘΥΝΣΗΣ Β ΛΥΚΕΙΟΥ'),
-(9, 'ΜΑΘΗΜΑΤΙΚΑ_Γ', 'ΜΑΘΗΜΑΤΙΚΑ Γ ΛΥΚΕΙΟΥ'),
+(5, 'ΜΑΘΗΜ_Β', 'ΜΑΘΗΜΑΤΙΚΑ ΚΑΤΕΥΘΥΝΣΗΣ Β ΛΥΚΕΙΟΥ'),
 (11, 'ΓΕΩΓΡΑΦΙΑ_Β', 'ΓΕΩΓΡΑΦΙΑ ΕΥΡΩΠΗΣ Β ΓΥΜΝΑΣΙΟΥ'),
-(8, 'ΓΕΩΓΡΑΦΙΑ_Α', 'ΓΕΩΓΡΑΦΙΑ ΕΛΛΑΔΑΣ Α ΓΥΜΝΑΣΙΟΥ');
+(8, 'ΓΕΩΓΡΑΦΙΑ_Α', 'ΓΕΩΓΡΑΦΙΑ ΕΛΛΑΔΑΣ Α ΓΥΜΝΑΣΙΟΥ'),
+(12, 'ΠΛΗΡΟΦΟΡΙΚΗ_Α', 'ΠΛΗΡΟΦΟΡΙΚΗ Α ΓΥΜΝΑΣΙΟΥ');
 
 -- --------------------------------------------------------
 
@@ -126,8 +144,8 @@ INSERT INTO `subjects` (`ID`, `subject_name`, `description`) VALUES
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
 `id` int(11) NOT NULL,
-  `username` char(5) NOT NULL,
-  `password` char(5) NOT NULL,
+  `username` char(10) NOT NULL,
+  `password` char(10) NOT NULL,
   `role` tinyint(1) NOT NULL DEFAULT '0',
   `fullname` varchar(255) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
@@ -138,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`, `fullname`) VALUES
 (1, 'admin', 'admin', 1, ''),
-(2, 'user1', 'user1', 0, ''),
+(2, 'user1', 'user1', 0, 'ioannis'),
 (4, 'user3', 'user3', 0, 'fullname');
 
 --
@@ -177,17 +195,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT για πίνακα `questions`
 --
 ALTER TABLE `questions`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT για πίνακα `scores`
 --
 ALTER TABLE `scores`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT για πίνακα `subjects`
 --
 ALTER TABLE `subjects`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT για πίνακα `user`
 --
