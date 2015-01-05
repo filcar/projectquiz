@@ -1,26 +1,34 @@
 -- phpMyAdmin SQL Dump
--- version 2.10.3
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 04 Ιαν 2015 στις 19:20:33
+-- Χρόνος δημιουργίας: 05 Ιαν 2015 στις 16:36:21
 -- Έκδοση διακομιστή: 5.5.39
 -- Έκδοση PHP: 5.4.31
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
--- 
--- Βάση: `3724_3725_3726`
--- 
-CREATE DATABASE `3724_3725_3726` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Βάση δεδομένων: `3724_3725_3726`
+--
+CREATE DATABASE IF NOT EXISTS `3724_3725_3726` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `3724_3725_3726`;
 
 -- --------------------------------------------------------
 
--- 
--- Δομή Πίνακα για τον Πίνακα `questions`
--- 
+--
+-- Δομή πίνακα για τον πίνακα `questions`
+--
 
+DROP TABLE IF EXISTS `questions`;
 CREATE TABLE IF NOT EXISTS `questions` (
 `ID` int(11) NOT NULL,
   `question` varchar(255) NOT NULL DEFAULT '',
@@ -31,11 +39,11 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `ans5` varchar(255) NOT NULL DEFAULT '',
   `corans` varchar(8) NOT NULL DEFAULT '',
   `subject_ID` int(11) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
--- 
--- 'Αδειασμα δεδομένων του πίνακα `questions`
--- 
+--
+-- Άδειασμα δεδομένων του πίνακα `questions`
+--
 
 INSERT INTO `questions` (`ID`, `question`, `ans1`, `ans2`, `ans3`, `ans4`, `ans5`, `corans`, `subject_ID`) VALUES
 (1, 'Τα κύρια στοιχεία ενός τριγώνου είναι:', 'οι πλευρές και οι διχοτόμοι', 'οι πλευρές και τα ύψη', 'οι πλευρές και οι γωνίες', 'οι γωνίες και οι διχοτόμοι', 'οι γωνίες και οι διάμεσοι', 'ans3', 2),
@@ -54,42 +62,50 @@ INSERT INTO `questions` (`ID`, `question`, `ans1`, `ans2`, `ans3`, `ans4`, `ans5
 (14, 'Ποιο από τα παρακάτω είναι λάθος;', 'Αν δύο τόξα ενός κύκλου είναι ίσα, τότε και οι χορδές τους είναι ίσες και αντιστρόφως.', 'Αν δύο τόξα δύο κύκλων είναι ίσα, τότε και οι χορδές τους είναι ίσες και αντιστρόφως.', 'Αν ένα τόξο ενός κύκλου είναι ίσο με ένα τόξο ενός άλλου κύκλου, τότε και οι χορδές τους είναι ίσες.', 'Αν δύο τόξα δύο ίσων κύκλων είναι ίσα, τότε και οι χορδές τους είναι ίσες και αντιστρόφως.', 'Αν δύο τόξα ενός κύκλου είναι ίσα, τότε και οι χορδές τους είναι ίσες.', 'ans2', 2),
 (16, 'Τα δευτερεύοντα στοιχεία ενός τριγώνου είναι:', 'οι πλευρές, οι διχοτόμοι και τα ύψη', 'οι πλευρές, τα ύψη και οι διάμεσοι', 'οι πλευρές, οι γωνίες και οι διχοτόμοι', 'οι διάμεσοι, οι διχοτόμοι και τα ύψη', 'οι γωνίες, οι διάμεσοι και οι διχοτόμοι', 'ans4', 2),
 (18, 'Ποια είναι η πρωτεύουσα της Μεγάλης Βρεττανίας;', 'Λονδίνο', 'Μάντσεστερ', 'Λίβερπουλ', 'Ενδιβούργο', 'Γλασκώβη', 'ans1', 11),
-(19, 'Ποια είναι η πρωτεύουσα της Ισπανίας;', 'Βαρκελώνη', 'Μαδρίτη', 'Μαγιόρκα', 'Σεβίλλη', 'Τενερίφη', 'ans2', 11);
+(19, 'Ποια είναι η πρωτεύουσα της Ισπανίας;', 'Βαρκελώνη', 'Μαδρίτη', 'Μαγιόρκα', 'Σεβίλλη', 'Τενερίφη', 'ans2', 11),
+(20, 'Ποια είναι η πρωτεύουσα της Ιταλίας;', 'Μιλάνο', 'Φλωρεντία', 'Ρώμη', 'Βενετία', 'Νάπολη', 'ans3', 11),
+(21, 'Ποια είναι η πρωτεύουσα της Σουηδίας;', 'Όσλο', 'Γκέτεμποργκ', 'Ουψάλα', 'Στοκχόλμη', 'Όσλο', 'ans4', 11),
+(22, 'Ποια είναι η πρωτεύουσα της Γερμανίας;', 'Βόννη', 'Αμβούργο', 'Μόναχο', 'Φραγκφούρτη', 'Βερολίνο', 'ans5', 11),
+(23, 'Ποια είναι η πρωτεύουσα του Βελγίου;', 'Βρυξέλλες', 'Λουξεμβούργο', 'Δουνκέρκη', 'Παρίσι', 'Άμστερνταμ', 'ans1', 11),
+(24, 'Αν από το κέντρο ενός κύκλου φέρουμε κάθετο σε μια τυχαία χορδή, τότε ποιο από τα παρακάτω είναι λάθος;', 'Η κάθετος αυτή διέρχεται από το μέσο της χορδής.', 'Η κάθετος αυτή διέρχεται από το μέσο του μικρού τόξου της χορδής.', 'Η κάθετος αυτή είναι παράλληλη με την χορδή.', 'Η κάθετος αυτή διέρχεται από το μέσο του μεγάλου τόξου της χορδής.', 'Η κάθετος αυτή διέρχεται από το μέσο οποιασδήποτε διαμέτρου.', 'ans3', 2),
+(25, 'Ποια είναι η πρωτεύουσα της Ουγγαρίας;', 'Πράγα', 'Βουδαπέστη', 'Βιέννη', 'Βίλνιους', 'Βρυξέλλες', 'ans2', 11),
+(26, 'Ποια είναι η πρωτεύουσα της Σερβίας;', 'Βουδαπέστη', 'Βιέννη', 'Βελιγράδι', 'Ζάγκρεμπ', 'Σεράγεβο', 'ans3', 11),
+(27, 'Ποια είναι η πρωτεύουσα της Γαλλίας;', 'Λυών', 'Μασσαλία', 'Λονδίνο', 'Παρίσι', 'Αθήνα', 'ans4', 11),
+(28, 'Ποια είναι η πρωτεύουσα της Λιθουανίας;', 'Κλέιπεντα', 'Ταλίν', 'Ρήγα', 'Μίνσκ', 'Βίλνιους', 'ans5', 11),
+(29, 'Ποια είναι η πρωτεύουσα της Πολωνίας;', 'Βουδαπέστη', 'Βαρσοβία', 'Κρακοβία', 'Πράγα', 'Μπρατισλάβα', 'ans2', 11),
+(30, 'Ποια είναι η πρωτεύουσα της Λευκορωσίας;', 'Μόσχα', 'Κίεβο', 'Μινσκ', 'Ταλίν', 'Ρήγα', 'ans3', 11),
+(31, 'Ποια είναι η πρωτεύουσα της Ουκρανίας;', 'Ρήγα', 'Ταλίν', 'Μίνσκ', 'Μόσχα', 'Κίεβο', 'ans5', 11);
 
 -- --------------------------------------------------------
 
--- 
--- Δομή Πίνακα για τον Πίνακα `scores`
--- 
+--
+-- Δομή πίνακα για τον πίνακα `scores`
+--
 
-CREATE TABLE `scores` (
-  `ID` int(11) NOT NULL auto_increment,
+DROP TABLE IF EXISTS `scores`;
+CREATE TABLE IF NOT EXISTS `scores` (
+`ID` int(11) NOT NULL,
   `user_name` char(5) NOT NULL,
   `score` int(11) NOT NULL,
-  `subject_ID` int(11) NOT NULL,
-  PRIMARY KEY  (`ID`)
+  `subject_ID` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- 
--- 'Αδειασμα δεδομένων του πίνακα `scores`
--- 
-
 
 -- --------------------------------------------------------
 
--- 
--- Δομή Πίνακα για τον Πίνακα `subjects`
--- 
+--
+-- Δομή πίνακα για τον πίνακα `subjects`
+--
 
+DROP TABLE IF EXISTS `subjects`;
 CREATE TABLE IF NOT EXISTS `subjects` (
 `ID` int(11) NOT NULL,
   `subject_name` varchar(20) NOT NULL DEFAULT '',
   `description` varchar(80) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
--- 
--- 'Αδειασμα δεδομένων του πίνακα `subjects`
--- 
+--
+-- Άδειασμα δεδομένων του πίνακα `subjects`
+--
 
 INSERT INTO `subjects` (`ID`, `subject_name`, `description`) VALUES
 (1, 'ΑΛΓΕΒΡΑ_Α', 'ΑΛΓΕΒΡΑ Α ΛΥΚΕΙΟΥ'),
@@ -103,23 +119,22 @@ INSERT INTO `subjects` (`ID`, `subject_name`, `description`) VALUES
 
 -- --------------------------------------------------------
 
--- 
--- Δομή Πίνακα για τον Πίνακα `user`
--- 
+--
+-- Δομή πίνακα για τον πίνακα `user`
+--
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL auto_increment,
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+`id` int(11) NOT NULL,
   `username` char(5) NOT NULL,
   `password` char(5) NOT NULL,
-  `role` tinyint(1) NOT NULL default '0',
-  `fullname` varchar(255) NOT NULL,
-  PRIMARY KEY  (`id`),
-  UNIQUE KEY `username` (`username`)
+  `role` tinyint(1) NOT NULL DEFAULT '0',
+  `fullname` varchar(255) NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
--- 
--- 'Αδειασμα δεδομένων του πίνακα `user`
--- 
+--
+-- Άδειασμα δεδομένων του πίνακα `user`
+--
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`, `fullname`) VALUES
 (1, 'admin', 'admin', 1, ''),
@@ -162,7 +177,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT για πίνακα `questions`
 --
 ALTER TABLE `questions`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT για πίνακα `scores`
 --
