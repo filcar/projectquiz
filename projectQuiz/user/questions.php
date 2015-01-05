@@ -4,8 +4,10 @@ include("../includes/connection.php");
 include_once("../includes/functions.php");
 session_start();
 check_role("0");
-if (isset($_POST["epilogi"])) $epilogi = $_POST["epilogi"];
-if (isset($_POST["nums_q"])) $nums_q=$_POST["nums_q"];
+if (isset($_POST["epilogi"])) 
+   $epilogi = $_POST["epilogi"];
+if (isset($_POST["nums_q"])) 
+   $nums_q=$_POST["nums_q"];
 $targetTime = time() + ($nums_q * 30);
 $actualTime = time();
 $remainingSeconds = $targetTime - $actualTime;
@@ -44,6 +46,10 @@ echo "</div>
 <h3>Απαντήστε στις παρακάτω ερωτήσεις</h3>
 ";
 $ids = array();
+$quest = array();
+$correct = array();
+$given = array();
+
 $all_rows=(mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."' ORDER BY RAND() LIMIT ".$nums_q));
 $i=0;
 echo "<form method='post' action='results.php'>";
@@ -57,10 +63,17 @@ echo "<input type='radio' name='q".$i."' value='ans3' />" .$row[4]. "<br />";
 echo "<input type='radio' name='q".$i."' value='ans4' />" .$row[5]. "<br />";
 echo "<input type='radio' name='q".$i."' value='ans5' />" .$row[6]. "<br />";
 echo "<hr />";
+
 $ids[$i]=$row["ID"];
+$quest[$i]=$row["question"];
+$correct[$i]=$row[$row["corans"]];
+$given[$i]=$row[""];
 }
 $_SESSION["i"]=$i;
 $_SESSION["ids"]=$ids;
+$_SESSION["quest"]=$quest;
+$_SESSION["correct"]=$correct;
+$_SESSION["given"]=$given;
 
 echo"
 <br /><br />
