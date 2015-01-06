@@ -21,15 +21,17 @@ echo"
     $descr=$row["description"];
 
 echo"
-    <div id='header'>Διαχειριστής του Κουίζ</div>
+    <div id='header'>Διαχείριση Κατηγοριών</div>
     
     <div id='nav'>
-        <h2>Τροποποίηση της Κατηγορίας:</h2>
-        <h2>".$cat."</h2>
-        <h2>( ".$descr." )</h2>
+        <h3>Τροποποίηση της Κατηγορίας:</h3>
+        <h3>".$cat."</h3>
+        <h3>( ".$descr." )</h3>
         <br /><br />
-        <h3><a href='categories.php'>Επιστροφή</a></h3>
+        <h4><a href='categories.php'>Επιστροφή</a></h4>
     </div>
+    
+<div id='menu'>";include ("../layout/menu.php");echo "</div>
     
 <div id='section'>
     <form method='post' action='categ_update-submit.php'>

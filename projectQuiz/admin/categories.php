@@ -4,6 +4,8 @@ include_once("../includes/functions.php");
 session_start();
 check_role(1);
 
+$message=$_GET["message"];
+
 echo"
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org
                                             /TR/xhtml1/DTD/xhtml1-strict.dtd\">
@@ -14,17 +16,28 @@ echo"
 </head>
 
 <body>
-    <div id='header'>Διαχειριστής του Κουίζ</div>
+    <div id='header'>Διαχείριση Κατηγοριών</div>
 
     <div id='nav'>
-    <h2><a href='categ_insert.php'>Προσθήκη Νέας Κατηγορίας</a></h2>
-    <h2><a href='categ_search.php'>Αναζήτηση Κατηγορίας</a></h2>
-    <br /><br />
-    <h3><a href='index.php'>Επιστροφή</a></h3>
+    <h3><a href='categ_insert.php'>Προσθήκη Νέας Κατηγορίας</a></h3>
+    <h3><a href='categ_search.php'>Αναζήτηση Κατηγορίας</a></h3>
+    <br /><br /><br /><br /><br /><br />";
+        
+if($message=="incomplete")
+                echo" <p>Πρέπει να συμπληρώσετε όλα τα πεδία της φόρμας.</p>";
+if($message=="successinsert")
+                echo"<p>Η προσθήκη της κατηγορίας έγινε επιτυχώς.</p>";
+if($message=="successupdate")
+                echo"<p>Η τροποποίηση της κατηγορίας έγινε επιτυχώς.</p>";
+if($message=="successdelete")
+                echo"<p>Η διαγραφή της κατηγορίας έγινε επιτυχώς.</p>";
+
+echo"
     </div>
 
 <div id='menu'>";include ("../layout/menu.php");echo "</div>
-<div id='section'>
+
+<div id='section_user'>
 <table border=1>
     <tr>
         <th>Κωδικός</th>

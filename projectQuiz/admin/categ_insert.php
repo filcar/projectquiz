@@ -14,13 +14,15 @@ echo"
 </head>
 
 <body>
-    <div id='header'>Διαχειριστής του Κουίζ</div>
+    <div id='header'>Διαχείριση Κατηγοριών</div>
     
     <div id='nav'>
-        <h2>Προσθήκη Νέας Κατηγορίας</h2>
+        <h3>Προσθήκη Νέας Κατηγορίας</h3>
         <br /><br />
-        <h3><a href='categories.php'>Επιστροφή</a></h3>
+        <h4><a href='categories.php'>Επιστροφή</a></h4>
     </div>
+    
+<div id='menu'>";include ("../layout/menu.php");echo "</div>
 
     <div id='section'>    
     <form method='post' action='categ_insert-submit.php'>
