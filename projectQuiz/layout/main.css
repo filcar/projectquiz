@@ -1,11 +1,12 @@
 #error {
     background-color:#ff0000;
     color:white; 
-    font-family:arial; font-size:14px;
-    text-align:center; width:200px;
+    font-family:arial;
+    font-size:12px;
+    text-align:center;
+    width:200px;
     float:left;
-     }
-
+}
 #header {
     background-color:#338585;
     color:white;
@@ -20,11 +21,9 @@
     padding-bottom: 5px;
     padding-top: 5px;
 }
-
 a.hidden {
     visibility: hidden;
 }
-
 #nav {
     line-height:30px;
     background-color:#eeeeee;
@@ -35,7 +34,7 @@ a.hidden {
 }
 #nav_user {
    // line-height:30px;
-    font-size:14px;
+    font-size:12px;
     background-color:#eeeeee;
     height:auto;
     width:200px;
@@ -46,15 +45,13 @@ a.hidden {
     padding-left: 220px;
     text-align:center;
     padding:10px;
-    
 }
 #section_user {
-    font-family:arial; font-size:14px;
+    font-family:arial;
+    font-size:12px;
     padding-left: 220px;
     padding-top: 10px;
     //padding:10px;
-
-     
 }
 #footer {
     background-color:#338585;
@@ -75,12 +72,10 @@ a.hidden {
     text-align:right;
     padding:2px;
 }
-
-  td.quest {
-        background-color:#FFFF99;
-        width: 600px;
-    }
-    
- td.kenter {
-        text-align: center;
-    }
+td.quest {
+    background-color:#FFFF99;
+    width: 600px;
+}  
+td.kenter {
+    text-align: center;
+}

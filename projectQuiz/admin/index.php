@@ -1,5 +1,4 @@
 <?php
-
 require_once("../includes/connection.php");
 include_once("../includes/functions.php");
 session_start();
@@ -23,17 +22,15 @@ echo"
         Προσθήκη νέας κατηγορίας<br />
         Διαγραφή κατηγορίας<br />
         Τροποποίηση κατηγορίας<br />
-        Αναζήτηση κατηγορίας<br />
-        Προβολή κατηγορίας<br />
+        Αναζήτηση κατηγορίας<br /><br />
     <hr/>
     <h4><a href='questions.php'>Διαχείριση Ερωτήσεων</a></h4>
             Προσθήκη νέας ερώτησης<br />
             Διαγραφή ερώτησης<br />
             Τροποποίηση ερώτησης<br />
-            Αναζήτηση ερώτησης<br />
-            Προβολή ερώτησης<br />
-
+            Αναζήτηση ερώτησης<br /><br />
     </div>
+<div id='footer'>";include "../layout/footer.php";echo "</div>
 </body>
 </html>";
 ?>

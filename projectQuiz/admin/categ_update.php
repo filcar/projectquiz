@@ -1,5 +1,4 @@
 <?php
-
 require_once("../includes/connection.php");
 include_once("../includes/functions.php");
 session_start();
@@ -11,6 +10,7 @@ echo"
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
     <meta charset='utf-8' />
+    <link rel='stylesheet' type='text/css' href='../layout/main.css'>
 </head>
 
 <body>";
@@ -21,17 +21,29 @@ echo"
     $descr=$row["description"];
 
 echo"
-    <h1>Διαχειριστής του Κουίζ</h1>
-    <h2>Τροποποίηση Κατηγορίας:<br />    <span>".$cat."-----( ".$descr." ) </span></h2>
-    <h3><a href='categories.php'>Επιστροφή</a></h3>
-    <br /><br />
+    <div id='header'>Διαχειριστής του Κουίζ</div>
+    
+    <div id='nav'>
+        <h2>Τροποποίηση της Κατηγορίας:</h2>
+        <h2>".$cat."</h2>
+        <h2>( ".$descr." )</h2>
+        <br /><br />
+        <h3><a href='categories.php'>Επιστροφή</a></h3>
+    </div>
+    
+<div id='section'>
     <form method='post' action='categ_update-submit.php'>
-        Όνομα Κατηγορίας: <input type='text' name='cat' value='".$cat."' /><br /><br />
-        Περιγραφή Κατηγορίας: <input type='text' name='descr' value='".$descr."' /><br /><br />
+        Όνομα Κατηγορίας: <input type='text' name='cat' value='".$cat."'
+                                    maxlength='255' size='100' /><br /><br />
+        Περιγραφή Κατηγορίας: <input type='text' name='descr' value='"
+                            .$descr."' maxlength='255' size='100' /><br /><br />
         <input type='hidden' name='updatecat' value='".$id."' />
         <input type='submit' name='submit' value='Τροποποίηση' />
     </form>
+</div>
+
+<div id='footer'>";include "../layout/footer.php";echo "</div>
+
 </body>
 </html>";
-
 ?>
