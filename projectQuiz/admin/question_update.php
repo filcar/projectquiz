@@ -1,5 +1,4 @@
 <?php
-
 require_once("../includes/connection.php");
 include_once("../includes/functions.php");
 session_start();
@@ -11,6 +10,7 @@ echo"
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
     <meta charset='utf-8' />
+    <link rel='stylesheet' type='text/css' href='../layout/main.css'>
 </head>
 
 <body>";
@@ -25,25 +25,48 @@ echo"
     $ans4=$row["ans4"];
     $ans5=$row["ans5"];
     $corans=$row["corans"];
-//    $subj_ID=$row["subject_ID"];
 
 echo"
-    <h1>Διαχειριστής του Κουίζ</h1>
-    <h2>Τροποποίηση της Ερώτησης:   <span>".$id." </span></h2>
-    <h3><a href='questions.php'>Επιστροφή</a></h3>
-    <br /><br />
+    <div id='header'>Διαχείριση Ερωτήσεων</div>
+    
+    <div id='nav'>
+        <h3>Τροποποίηση της Ερώτησης:   <span>".$id." </span></h3>
+        <h4><a href='questions.php'>Επιστροφή</a></h4>
+    </div>
+    
+    <div id='menu'>";include ("../layout/menu.php");echo "</div>
+        
+    <div id='section_user'>
     <form method='post' action='question_update-submit.php'>
-        Ερώτηση: <input type='text' name='question' value='".$question."' maxlength='255' size='80' /><br /><br />
-	Απάντηση 1: <input type='text' name='ans1' value='".$ans1."' /><br /><br />
-        Απάντηση 2: <input type='text' name='ans2' value='".$ans2."' /><br /><br />
-        Απάντηση 3: <input type='text' name='ans3' value='".$ans3."' /><br /><br />
-        Απάντηση 4: <input type='text' name='ans4' value='".$ans4."' /><br /><br />
-        Απάντηση 5: <input type='text' name='ans5' value='".$ans5."' /><br /><br />
-        Σωστή Απάντηση: <input type='text' name='corans' value='".$corans."' /><br /><br />
+    
+        Ερώτηση: <input type='text' name='question' value='".$question."'
+                                      maxlength='255' size='170' /><br /><br />
+	Απάντηση 1: <input type='text' name='ans1' value='".$ans1."'
+                                      maxlength='255' size='170' /><br /><br />
+        Απάντηση 2: <input type='text' name='ans2' value='".$ans2."'
+                                      maxlength='255' size='170' /><br /><br />
+        Απάντηση 3: <input type='text' name='ans3' value='".$ans3."'
+                                      maxlength='255' size='170' /><br /><br />
+        Απάντηση 4: <input type='text' name='ans4' value='".$ans4."'
+                                      maxlength='255' size='170' /><br /><br />
+        Απάντηση 5: <input type='text' name='ans5' value='".$ans5."'
+                                      maxlength='255' size='170' /><br /><br />
+        Σωστή Απάντηση η&nbsp;&nbsp;&quot;".$corans."&quot;&nbsp;&nbsp;
+        ---&nbsp;&nbsp;Καινούργια Επιλογή:&nbsp;&nbsp;
+        <select name='corans'>
+            <option value='ans1'>ans1</option>
+            <option value='ans2'>ans2</option>
+            <option value='ans3'>ans3</option>
+            <option value='ans4'>ans4</option>
+            <option value='ans5'>ans5</option>
+        </select><br /><br />
         <input type='hidden' name='updatequestion' value='".$id."' />
         <input type='submit' name='submit' value='Τροποποίηση' />
     </form>
+    </div><br/><br/>
+    
+<div id='footer'>";include "../layout/footer.php";echo "</div>
+
 </body>
 </html>";
-
 ?>

@@ -4,6 +4,8 @@ include_once("../includes/functions.php");
 session_start();
 check_role(1);
 
+$message=$_GET["message"];
+
 $epilogi=$_POST["epilogi"];
 $_SESSION["epilogi"]=$epilogi;
 
@@ -40,7 +42,19 @@ echo "	</select><br />
         
     <br/><a href='question_insert.php'>Nέα Ερώτηση</a>
     <br/><a href='question_search.php'>Αναζήτηση Ερώτησης</a>
-</div>
+    <br /><br /><br /><br /><br /><br />";
+        
+if($message=="incomplete")
+                echo" <p>Πρέπει να συμπληρώσετε όλα τα πεδία της φόρμας.</p>";
+if($message=="successinsert")
+                echo"<p>Η προσθήκη της ερώτησης έγινε επιτυχώς.</p>";
+if($message=="successupdate")
+                echo"<p>Η τροποποίηση της ερώτησης έγινε επιτυχώς.</p>";
+if($message=="successdelete")
+                echo"<p>Η διαγραφή της ερώτησης έγινε επιτυχώς.</p>";
+
+echo"
+    </div>
     
 <div id='menu'>";include ("../layout/menu.php");echo "</div>
 

@@ -8,5 +8,5 @@ $id=$_GET["id"];
 	
 mysql_query("DELETE FROM questions WHERE ID='".$id."'");
 
-header("Location: questions.php");
+header("Location: questions.php?message=successdelete");
 ?>

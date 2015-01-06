@@ -26,17 +26,17 @@ echo"
 <div id='section_user'>
     <form method='post' action='question_insert-submit.php'>
 	Ερώτηση: <input type='text' name='question' maxlength='255'
-                                                      size='150' /><br /><br />
+                                                      size='170' /><br /><br />
 	Απάντηση 1: <input type='text' name='ans1' maxlength='255'
-                                                      size='150' /><br /><br />
+                                                      size='170' /><br /><br />
         Απάντηση 2: <input type='text' name='ans2' maxlength='255'
-                                                      size='150' /><br /><br />
+                                                      size='170' /><br /><br />
         Απάντηση 3: <input type='text' name='ans3' maxlength='255'
-                                                      size='150' /><br /><br />
+                                                      size='170' /><br /><br />
         Απάντηση 4: <input type='text' name='ans4' maxlength='255'
-                                                      size='150' /><br /><br />
+                                                      size='170' /><br /><br />
         Απάντηση 5: <input type='text' name='ans5' maxlength='255'
-                                                      size='150' /><br /><br />
+                                                      size='170' /><br /><br />
         Σωστή Απάντηση:
         <select name='corans'>
             <option value='ans1'>ans1</option>
