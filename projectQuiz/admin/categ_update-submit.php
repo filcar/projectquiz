@@ -1,13 +1,18 @@
 <?php
+require_once("../includes/connection.php");
+include_once("../includes/functions.php");
+session_start();
+check_role(1);
 
-$cat=$_POST["subject_name"];
-$descr=$_POST["description"];
+$cat=$_POST["cat"];
+$descr=$_POST["descr"];
 $id=$_POST["updatecat"];
 
-require_once("../includes/connection.php");
-
-mysql_query("UPDATE subjects SET subject_name='$cat', description='$descr' WHERE ID='$id'");
+if($cat!=NULL && $descr!=NULL){
+    mysql_query("UPDATE subjects SET subject_name='".$cat."', description='"
+                                                .$descr."' WHERE ID='".$id."'");
+    header("Location: categories.php?message=successupdate");
+}
 	
-header("location: categories.php");
-	
+else header("Location: categories.php?message=incomplete");
 ?>
