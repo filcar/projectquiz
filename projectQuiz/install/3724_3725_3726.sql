@@ -83,31 +83,23 @@ INSERT INTO `questions` (`ID`, `question`, `ans1`, `ans2`, `ans3`, `ans4`, `ans5
 --
 
 DROP TABLE IF EXISTS `scores`;
-CREATE TABLE IF NOT EXISTS `scores` (
-`ID` int(11) NOT NULL,
+
+CREATE TABLE `scores` (
+  `ID` int(11) NOT NULL auto_increment,
   `user_name` char(10) NOT NULL,
   `score` int(11) NOT NULL,
   `subject_ID` int(11) NOT NULL,
-  `fullname` varchar(255) NOT NULL,
-  `playdate` varchar(15) DEFAULT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+  `scale` varchar(255) NOT NULL,
+  `playdate` varchar(15) default NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
 --
 -- Άδειασμα δεδομένων του πίνακα `scores`
 --
+INSERT INTO `scores` VALUES (59, 'user2', 0, 1, 'Αποτυχία', '08/01/15');
+INSERT INTO `scores` VALUES (58, 'user1', 0, 2, 'Αποτυχία', '08/01/15');
 
-INSERT INTO `scores` (`ID`, `user_name`, `score`, `subject_ID`, `fullname`, `playdate`) VALUES
-(21, 'user2', 60, 11, 'Φίλιππος', '06/01/15'),
-(20, 'user3', 40, 2, 'Ιωάννης', '06/01/15'),
-(19, 'user3', 40, 11, 'Ιωάννης', '06/01/15'),
-(18, 'user3', 50, 11, 'Ιωάννης', '06/01/15'),
-(17, 'user3', 40, 11, 'Ιωάννης', '06/01/15'),
-(16, 'user1', 20, 2, 'Γεώργιος', '06/01/15'),
-(15, 'user1', 40, 2, 'Γεώργιος', '06/01/15'),
-(14, 'user2', 20, 2, 'Φίλιππος', '06/01/15'),
-(13, 'user2', 100, 11, 'Φίλιππος', '06/01/15'),
-(22, 'user1', 40, 2, 'Γεώργιος', '06/01/15'),
-(23, 'user2', 100, 11, 'Φίλιππος', '06/01/15');
 
 -- --------------------------------------------------------
 
