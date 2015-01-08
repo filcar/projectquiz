@@ -4,7 +4,8 @@ include_once "functions.php";
 
 if(isset($_POST["username"], $_POST["password"])) {
     $username = $_POST["username"];
-    $password = $_POST["password"];}
+    $password = $_POST["password"];
+    $fullname = $_POST["fullname"];}
 
 if(log_in($username, $password))
 {

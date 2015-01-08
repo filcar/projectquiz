@@ -1,8 +1,11 @@
+body{
+    font-family:Vedrana;
+    font-size:14px;
+}
+
 #error {
     background-color:#ff0000;
     color:white; 
-    font-family:arial;
-    font-size:12px;
     text-align:center;
     width:200px;
     float:left;
@@ -24,6 +27,7 @@
 a.hidden {
     visibility: hidden;
 }
+
 #nav {
     line-height:30px;
     background-color:#eeeeee;
@@ -33,8 +37,6 @@ a.hidden {
     padding:5px;
 }
 #nav_user {
-   // line-height:30px;
-    font-size:12px;
     background-color:#eeeeee;
     height:auto;
     width:200px;
@@ -43,15 +45,25 @@ a.hidden {
 }
 #section {
     padding-left: 220px;
+    display:block; 
     text-align:center;
     padding:10px;
-}
+ }
 #section_user {
-    font-family:arial;
-    font-size:12px;
     padding-left: 220px;
     padding-top: 10px;
     //padding:10px;
+}
+#section_user.hidden {
+    visibility: hidden;
+}
+#section_user_ans {
+    padding-left: 220px;
+    padding-top: 10px;
+    //padding:10px;
+}
+#section_user_ans.hidden {
+    visibility: hidden;
 }
 #footer {
     background-color:#338585;
@@ -78,4 +90,17 @@ td.quest {
 }  
 td.kenter {
     text-align: center;
+}
+
+h2 {
+    color:red;
+}
+
+table.kenter {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+td {
+    padding: 5px;
 }

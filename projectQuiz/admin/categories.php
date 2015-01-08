@@ -19,8 +19,8 @@ echo"
     <div id='header'>Διαχείριση Κατηγοριών</div>
 
     <div id='nav'>
-    <h3><a href='categ_insert.php'>Προσθήκη Νέας Κατηγορίας</a></h3>
-    <h3><a href='categ_search.php'>Αναζήτηση Κατηγορίας</a></h3>
+    <br/><a href='categ_insert.php'>Νέα Κατηγορία</a>
+    <br/><a href='categ_search.php'>Αναζήτηση Κατηγορίας</a>
     <br /><br /><br /><br /><br /><br />";
         
 if($message=="incomplete")
@@ -37,8 +37,9 @@ echo"
 
 <div id='menu'>";include ("../layout/menu.php");echo "</div>
 
-<div id='section_user'>
-<table border=1>
+<div id='section'>
+<h2>Καταχωρημένες Κατηγορίες</h2>
+<table class='kenter' border=1>
     <tr>
         <th>Κωδικός</th>
         <th>Όνομα Κατηγορίας</th>

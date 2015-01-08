@@ -17,7 +17,7 @@ echo"
 </head>
 
 <body>
-<div id='header'>Καλώς ήρθατε στο Quiz μας κ. ".$fullname."</div>
+<div id='header'>Καλώς ήρθατε στο Quiz μας. Χρήστης: ".$fullname."</div>
 
 <div id=nav>
     <p>Επιλέξτε μία από τις παρακάτω θεματικές ενότητες:</p>
@@ -42,24 +42,27 @@ echo"
 
 <div id='menu'>";include ("../layout/menu.php");echo "</div>
 
-<div id=section_user>
-    <table border=1>
+<div id=section>
+    <h2>Οι επιδόσεις σου στο Quiz!</h2>
+    <table class='kenter' border=1>
         <tr>
             <th>Κωδικός Quiz</th>
-            <th>Κωδικός Κατηγορίας</th>
             <th>Ημερομηνία</th>
+            <th>Κατηγορία</th>
+            <th>Βαθμολογία</th>
             <th>Αποτέλεσμα</th>
         </tr>";
-$all_scores = mysql_query("SELECT * FROM scores WHERE user_name='".$username."'
-                                                        ORDER BY score DESC");
+$all_scores = mysql_query("SELECT scores.id as ID, playdate, subject_name,score,scale FROM scores, subjects WHERE subject_ID=subjects.id and user_name='".$username."'
+                                                        ORDER BY ID");
     while($score_row = mysql_fetch_array($all_scores))
     {
         echo"
         <tr>
             <td>".$score_row["ID"]."</td>
-            <td>".$score_row["subject_ID"]."</td>
             <td>".$score_row["playdate"]."</td>
-            <td>".$score_row["score"]."</td>
+            <td>".$score_row["subject_name"]."</td>
+            <td>".$score_row["score"]."%</td>
+            <td>".$score_row["scale"]."</td>
         </tr>";
     }
 

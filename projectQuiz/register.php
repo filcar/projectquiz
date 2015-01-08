@@ -23,7 +23,7 @@ echo "</div>
     <table> 
         <tr>
             <td>Όνοματεπώνυμο χρήστη:</td>
-            <td width='300'><input type='text' name='fullname' /></td>
+            <td><input type='text' name='fullname' size='50'/></td>
         </tr>
         <tr>
             <td>Όνομα χρήστη:</td>
@@ -31,7 +31,7 @@ echo "</div>
         </tr>
         <tr>
             <td>Κωδικός χρήστη:</td>
-            <td><input type='password' name='password' /></td>
+            <td><input type='password' name='password'/></td>
         </tr>
     </table>    
         <input type='submit' value='Εγγραφή' />

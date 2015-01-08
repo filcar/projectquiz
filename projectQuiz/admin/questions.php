@@ -5,12 +5,11 @@ session_start();
 check_role(1);
 
 $message=$_GET["message"];
+if(isset($_POST["epilogi"]))
+{$epilogi=$_POST["epilogi"];
+$_SESSION["epilogi"]=$epilogi;}
 
-$epilogi=$_POST["epilogi"];
-$_SESSION["epilogi"]=$epilogi;
-
-$categ_questions = (mysql_query("SELECT * FROM questions WHERE
-                                                   subject_ID='".$epilogi."'"));
+$categ_questions = (mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."'"));
 $categ_query = (mysql_query("SELECT * FROM subjects WHERE ID='".$epilogi."'"));
 $categ_row = mysql_fetch_array($categ_query);
 
@@ -30,16 +29,18 @@ echo"
     <form method='post' action='questions.php'>
     Επιλογή Κατηγορίας
         <select name='epilogi'>";
-        $query = mysql_query("SELECT * FROM subjects");
-	while($row = mysql_fetch_array($query))
-	{
-             echo" <option value='".$row["ID"]."'>".$row["subject_name"]."
-                   </option>";
-	}
+        if(isset($epilogi)){
+            $query = mysql_query("SELECT * FROM subjects where id='".$epilogi."'");
+            while($row = mysql_fetch_array($query))
+            { echo" <option value='".$row["ID"]."' selected>".$row["subject_name"]."</option>";}
+        }
+            $query = mysql_query("SELECT * FROM subjects where id!='".$epilogi."'");
+            while($row = mysql_fetch_array($query))
+            { echo" <option value='".$row["ID"]."'>".$row["subject_name"]."</option>";}
 echo "	</select><br />
 	<input type='submit' value='Συνέχισε' />
     </form>
-        
+    <br/><hr/>    
     <br/><a href='question_insert.php'>Nέα Ερώτηση</a>
     <br/><a href='question_search.php'>Αναζήτηση Ερώτησης</a>
     <br /><br /><br /><br /><br /><br />";

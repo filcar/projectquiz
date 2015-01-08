@@ -25,8 +25,9 @@ echo"
     <div id='header'>Διαχείριση Ερωτήσεων</div>
     
     <div id='nav'>
-        <h3>Αναζήτηση Ερώτησης</h3>
-        <h4><a href='questions.php'>Επιστροφή</a></h4>
+        <h4>Αναζήτηση Ερώτησης</h4>
+        <br/><a href='question_search.php'>Νέα Αναζήτηση</a>
+        <br/><a href='questions.php'>Αλλαγή Κατηγορίας</a>
     </div>
     
     <div id='menu'>";include ("../layout/menu.php");echo "</div>
@@ -39,15 +40,17 @@ echo"
             <th>Σωστή Απάντηση</th>
             <th colspan='2'><br /></th>
 	</tr>";
-
+    $query_sub = mysql_query("SELECT description FROM subjects WHERE ID='".$epilogi."'");
+    $cat_epilogi=mysql_fetch_array($query_sub);
+        echo "<h2> Κατηγορία: ".$cat_epilogi["description"]."</h2>";
     $query = mysql_query("SELECT * FROM questions WHERE
             subject_ID='".$epilogi."' AND
             question LIKE '%".$question."%' AND
-            ans1 LIKE '%".$ans1."%' AND
-            ans2 LIKE '%".$ans2."%' AND
-            ans3 LIKE '%".$ans3."%' AND
-            ans4 LIKE '%".$ans4."%' AND
-            ans5 LIKE '%".$ans5."%' ");
+            ANS1 LIKE '%".$ans1."%' AND
+            ANS2 LIKE '%".$ans2."%' AND
+            ANS3 LIKE '%".$ans3."%' AND
+            ANS4 LIKE '%".$ans4."%' AND
+            ANS5 LIKE '%".$ans5."%' ");
     
     while($row = mysql_fetch_array($query))
     {
