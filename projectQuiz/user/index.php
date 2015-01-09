@@ -7,6 +7,7 @@ check_role("0");
 $username=$_SESSION["username"];
 $fullname=$_SESSION["fullname"];
 
+
 echo"
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org
                                             /TR/xhtml1/DTD/xhtml1-strict.dtd\">
@@ -52,14 +53,15 @@ echo"
             <th>Βαθμολογία</th>
             <th>Αποτέλεσμα</th>
         </tr>";
-$all_scores = mysql_query("SELECT scores.id as ID, playdate, subject_name,score,scale FROM scores, subjects WHERE subject_ID=subjects.id and user_name='".$username."'
-                                                        ORDER BY ID");
+
+$all_scores = mysql_query("SELECT scores.id as ID, playdate, subject_name,score,scale FROM scores, subjects "
+        . " WHERE subject_ID=subjects.id and user_name='".$username."' ORDER BY ID");
     while($score_row = mysql_fetch_array($all_scores))
     {
         echo"
         <tr>
             <td>".$score_row["ID"]."</td>
-            <td>".$score_row["playdate"]."</td>
+            <td>".date("m/d/Y H:i:s", strtotime($score_row["playdate"]))."</td>
             <td>".$score_row["subject_name"]."</td>
             <td>".$score_row["score"]."%</td>
             <td>".$score_row["scale"]."</td>
@@ -67,6 +69,7 @@ $all_scores = mysql_query("SELECT scores.id as ID, playdate, subject_name,score,
     }
 
     echo" </table>
+
 </div>
             
 <div id='footer'>";include "../layout/footer.php";echo "</div>

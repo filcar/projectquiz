@@ -26,7 +26,7 @@ function log_in($username, $password) {
 /*    ο Διαχειριστής ή κάποιος Απλός Χρήστης     */
 /*************************************************/
 function check_role($rol){
-    if(!isset($_SESSION["username"]) || $_SESSION["role"]<$rol) {
+    if(!isset($_SESSION["username"]) || $_SESSION["role"]!=$rol) {
         echo "<html>
         <head> <meta charset='utf-8'/>
         </head>
@@ -42,7 +42,7 @@ function check_role($rol){
 }
 
 /***********************************************************/
-/* Έλεγχος για το αν ο χρήστης είναι Παλιός ή Νέος Χρήστης */
+/* Έλεγχος για το αν το όνομα χρήστη χρησιμοποιείται */
 /***********************************************************/
 function user_exist($username){
     mysql_query("SET NAMES utf8");
