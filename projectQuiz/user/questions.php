@@ -8,7 +8,7 @@ if (isset($_POST["epilogi"]))
     $epilogi = $_POST["epilogi"];
 if (isset($_POST["nums_q"]))
     $nums_q=$_POST["nums_q"];
-$targetTime = time() + ($nums_q * 30);
+$targetTime = time() + ($nums_q * 3);
 $actualTime = time();
 $remainingSeconds = $targetTime - $actualTime;
 $hiden_ans="class='hidden'";
@@ -35,7 +35,7 @@ echo"
             chk=1;
         }
         function setCountDown ()
-        {
+        { if (chk==0){
           seconds--;
             document.getElementById("remain").innerHTML = seconds+" δευτερόλεπτα";
             SD=window.setTimeout( "setCountDown()", 1000 );
@@ -44,19 +44,20 @@ echo"
                seconds = "00"; window.clearTimeout(SD);
                 window.alert("Ο χρόνος δυστυχώς έληξε. Πάτα OK για να συνεχίσεις!");
                                           // change timeout message as required
-               window.location = "../user/results.php" // Add your redirect url
+               window.location = "questions.php" // Add your redirect url
             } 
+          }
         }
-//
+//Η έξοδος από την σελίδα χωρίς να υπάρχει υποβολή, καταχωρείται ως αποτυχία
         window.onbeforeunload = onExit;
         window.onunload = test;
         function test(){
-                if (chk === 0){  
-            window.location = "onclose.php";
-        }}
-
+           if (chk === 0)
+           {  window.location = "onclose.php";
+            }
+        }
 function onExit(evt){
-            return "Write something clever here...";
+            return "Η έξοδος καταγράφεται ως αποτυχία!!!";
         }
      
 </script>
@@ -123,7 +124,7 @@ if (isset($_POST["check"])) {
         if($score>50) $scale="Καλώς";
         if($score>70) $scale="Πολύ καλά";
         if($score>90) $scale="Αριστα";
-        $datetime=date("d/m/y");
+        $datetime=date("Y-d-m H:i:s");
         mysql_query("INSERT INTO scores (user_name, scale, subject_ID, score,
                     playdate) VALUES ('$username', '$scale', '$epilogi',
                         '$score', '$datetime')");

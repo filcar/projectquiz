@@ -17,7 +17,7 @@ body{
     padding:5px;
 }
 #menu {
-    position:left;
+    //position: static;
     background-color:#FFFF99;
     text-align:left;
     padding-left: 220px;
@@ -79,12 +79,11 @@ a.hidden {
     border-style: solid;
     border-color: #338585;
     color:red;
-    //float:right;
     position:fixed ;
     text-align:right;
     padding:2px;
 }
-td.quest {
+th,td.quest {
     background-color:#FFFF99;
     width: 600px;
 }  
