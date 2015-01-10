@@ -8,7 +8,7 @@ if (isset($_POST["epilogi"]))
     $epilogi = $_POST["epilogi"];
 if (isset($_POST["nums_q"]))
     $nums_q=$_POST["nums_q"];
-$targetTime = time() + ($nums_q * 3);
+$targetTime = time() + ($nums_q * 30);
 $actualTime = time();
 $remainingSeconds = $targetTime - $actualTime;
 $hiden_ans="class='hidden'";
