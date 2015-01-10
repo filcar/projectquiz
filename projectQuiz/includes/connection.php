@@ -2,7 +2,7 @@
 /**************************/
 /* Σύνδεση με Εξυπηρετητή */
 /**************************/
-$link = mysql_connect("localhost", "root", "");
+$link = mysql_connect("localhost", "root", "27188");
 if(!$link){
     die("Could not connect to host");}
 
@@ -18,5 +18,5 @@ $seldb = mysql_select_db("3724_3725_3726");
 if(!$seldb){
     die("Could not connect to database");}
 
-error_reporting(0);
+//error_reporting(0);
 ?>
