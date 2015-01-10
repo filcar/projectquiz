@@ -18,5 +18,5 @@ $seldb = mysql_select_db("3724_3725_3726");
 if(!$seldb){
     die("Could not connect to database");}
 
-error_reporting(0);
+//error_reporting(0);
 ?>
