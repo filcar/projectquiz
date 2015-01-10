@@ -3,7 +3,7 @@ include("../includes/connection.php");
 include_once("../includes/functions.php");
 session_start();
 check_role("0");
-
+$nums_q=0;
 if (isset($_POST["epilogi"]))
     $epilogi = $_POST["epilogi"];
 if (isset($_POST["nums_q"]))
@@ -13,10 +13,17 @@ $actualTime = time();
 $remainingSeconds = $targetTime - $actualTime;
 $hiden_ans="class='hidden'";
 $check=0;
+$hiden_div="";
 if (isset($_POST["check"])) {
     $hiden_div = "class='hidden'";
     $hiden_ans = "";
     $check=1;
+    $i=$_SESSION["i"];
+    $ids=$_SESSION["ids"];
+    $quest=$_SESSION["quest"];
+    $correct=$_SESSION["correct"];
+    $epilogi=$_SESSION["epilogi"];
+    $username=$_SESSION["username"];
 }
 echo"
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org
