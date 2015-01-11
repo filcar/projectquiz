@@ -14,8 +14,8 @@ echo"
 </head>
 
 <body>
-    <div id='header'>Διαχείριση Ερωτήσεων</div>
-    
+<div id='header'>Διαχείριση Ερωτήσεων</div>
+
     <div id='nav'>
         <h3>Προσθήκη Νέας Ερώτησης</h3>
         <h4><a href='questions.php'>Επιστροφή</a></h4>
@@ -50,9 +50,7 @@ echo"
         
     </form>
 </div><br/><br/>
-    
 <div id='footer'>";include "../layout/footer.php";echo "</div>
-
 </body>
 </html>";
 ?>

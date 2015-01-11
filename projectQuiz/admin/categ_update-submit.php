@@ -10,7 +10,7 @@ $id=$_POST["updatecat"];
 
 if($cat!=NULL && $descr!=NULL){
     mysql_query("UPDATE subjects SET subject_name='".$cat."', description='"
-                                                .$descr."' WHERE ID='".$id."'");
+                                            .$descr."' WHERE ID='".$id."'");
     header("Location: categories.php?message=successupdate");
 }
 	

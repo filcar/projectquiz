@@ -14,7 +14,7 @@ $corans=$_POST["corans"];
 $epilogi=$_SESSION["epilogi"];
 
 if($question!=NULL && $ans1!=NULL && $ans2!=NULL && $ans3!=NULL && $ans4!=NULL
-                                              && $ans5!=NULL && $corans!=NULL){
+                                            && $ans5!=NULL && $corans!=NULL){
     mysql_query("INSERT INTO questions (question, ans1, ans2, ans3, ans4, ans5,
             corans, subject_ID) VALUES ('$question', '$ans1', '$ans2', '$ans3',
                                     '$ans4', '$ans5', '$corans', '$epilogi')");

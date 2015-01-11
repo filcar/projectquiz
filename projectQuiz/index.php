@@ -20,13 +20,13 @@ echo "
 
 <body>
 <div id='header'>Καλώς ήρθατε στο Project Quiz</div>
-
 <div id='nav'><br /><br />
 <form action='includes/login.php' method='post'>
     <p>Σύνδεση χρήστη<p>
-    <input type='text' name='username' placeholder='Όνομα χρήστη'/><br /><br />
+    <input type='text' name='username' placeholder='Όνομα χρήστη'/>
+                                                                <br /><br />
     <input type='password' name='password' placeholder='Κωδικός χρήστη'/>
-                                                                    <br /><br />
+                                                                <br /><br />
     <input type='submit' value='Σύνδεση'/> <br/>
 </form>";
 
@@ -38,9 +38,7 @@ if (isset($_GET["error"])){
 
 echo "<br/><p><a href='register.php'>Εγγραφείτε τώρα</a></p>
 </div>
-
-<div id='section'>
-<br/><br/>
+<div id='section'><br/><br/>
 <p>Στις σελίδες αυτές μπορείται να δοκιμάσετε τις γνώσεις σας<br />
    παίζοντας κουιζ και απαντώντας στις ερωτήσεις του.</p>
 <p>Υπάρχει πλήθος κατηγοριών που μπορείται να επιλέξετε<br />
@@ -50,11 +48,9 @@ echo "<br/><p><a href='register.php'>Εγγραφείτε τώρα</a></p>
 <p>Αν έχεται ήδη έναν λογαριασμό, παρακαλώ συνδεθείτε<br/>
    χρησιμοποιώντας το όνομα χρήστη και τον κωδικό σας.<br/>
    Διαφορετικά ακολουθήστε την διαδικασία 
-                                        <a href='register.php'>εγγραφής</a>.</p>
+                                    <a href='register.php'>εγγραφής</a>.</p>
 </div> 
-
 <div id='footer'>";include "layout/footer.php";echo "</div>
-
 </body>
 </html>";
 ?>

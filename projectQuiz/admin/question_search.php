@@ -24,7 +24,8 @@ echo"
     <div id='menu'>";include ("../layout/menu.php");echo "</div>
 
     <div id='section_user'>";
-$query_sub = mysql_query("SELECT description FROM subjects WHERE ID='".$epilogi."'");
+$query_sub = mysql_query("SELECT description FROM subjects WHERE ID='"
+                                                                .$epilogi."'");
 $cat_epilogi=mysql_fetch_array($query_sub);
     echo "<h2> Κατηγορία: ".$cat_epilogi["description"]."</h2>";
     

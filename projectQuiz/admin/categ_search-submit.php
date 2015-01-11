@@ -17,14 +17,12 @@ echo"
 </head>
 
 <body>
-    <div id='header'>Διαχείριση Κατηγοριών</div>
-    
+<div id='header'>Διαχείριση Κατηγοριών</div>
     <div id='nav'>
         <h3>Αναζήτηση Κατηγορίας</h3>
         <h4><a href='categories.php'>Επιστροφή</a></h4>
     </div>
-
-    <div id='menu'>";include ("../layout/menu.php");echo "</div>
+<div id='menu'>";include ("../layout/menu.php");echo "</div>
     
 <div id='section'>
     <table border=1>
@@ -41,11 +39,12 @@ echo"
     {
         echo"
         <tr>
-            <td>".$row["ID"]."</td>
-            <td>".$row["subject_name"]."</td>
-            <td>".$row["description"]."</td>
-            <td><a href='categ_delete.php?id=".$row["ID"]."'>Διαγραφή</a></td>
-            <td><a href='categ_update.php?id=".$row["ID"]."'>Τροποποίηση</a></td>
+          <td>".$row["ID"]."</td>
+          <td>".$row["subject_name"]."</td>
+          <td>".$row["description"]."</td>
+          <td><a href='categ_delete.php?id=".$row["ID"]."'>Διαγραφή</a></td>
+          <td><a href='categ_update.php?id=".$row["ID"]."'>Τροποποίηση</a>
+          </td>
         </tr>";
     }
 echo"

@@ -18,7 +18,7 @@ if ($msg == "") {
     mysql_query("INSERT INTO user(username,password,role,fullname) VALUES
              ('$username', '$password',0,'$fullname')");
     $msg = "Επιτυχής καταχώρηση.
-               Επιστρέψτε στην σελίδα εισαγωγής των κωδικών για να συνδεθείτε";}
+            Επιστρέψτε στην σελίδα εισαγωγής των κωδικών για να συνδεθείτε";}
 
 $_SESSION["msg"] = $msg;
 

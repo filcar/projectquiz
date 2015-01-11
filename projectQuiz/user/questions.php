@@ -3,11 +3,11 @@ include("../includes/connection.php");
 include_once("../includes/functions.php");
 session_start();
 check_role("0");
+
 $nums_q=0;
-if (isset($_POST["epilogi"]))
-    $epilogi = $_POST["epilogi"];
-if (isset($_POST["nums_q"]))
-    $nums_q=$_POST["nums_q"];
+if (isset($_POST["epilogi"])) $epilogi = $_POST["epilogi"];
+if (isset($_POST["nums_q"])) $nums_q=$_POST["nums_q"];
+
 $targetTime = time() + ($nums_q * 30);
 $actualTime = time();
 $remainingSeconds = $targetTime - $actualTime;
@@ -25,6 +25,7 @@ if (isset($_POST["check"])) {
     $epilogi=$_SESSION["epilogi"];
     $username=$_SESSION["username"];
 }
+
 echo"
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org
                                             /TR/xhtml1/DTD/xhtml1-strict.dtd\">
@@ -38,41 +39,46 @@ echo"
     
     var seconds = <?php echo $remainingSeconds; ?> 
     var chk=<?php echo $check; ?>  
-        function chkset(){
+    function chkset(){
             chk=1;
-        }
-        function setCountDown ()
-        { if (chk==0){
-          seconds--;
-            document.getElementById("remain").innerHTML = seconds+" δευτερόλεπτα";
-            SD=window.setTimeout( "setCountDown()", 1000 );
-            if (seconds == '00')
-            {
-               seconds = "00"; window.clearTimeout(SD);
-                window.alert("Ο χρόνος δυστυχώς έληξε. Πάτα OK για να συνεχίσεις!");
-                                          // change timeout message as required
-               window.location = "questions.php" // Add your redirect url
-            } 
-          }
-        }
+    }
+    function setCountDown ()
+    {
+    if (chk==0){
+        seconds--;
+        document.getElementById("remain").innerHTML = seconds+" δευτερόλεπτα";
+        SD=window.setTimeout( "setCountDown()", 1000 );
+        if (seconds == '00')
+        {
+           seconds = "00"; window.clearTimeout(SD);
+           window.alert("Ο χρόνος δυστυχώς έληξε. Πάτα OK για να συνεχίσεις!");
+                                      // change timeout message as required
+           window.location = "questions.php" // Add your redirect url
+        } 
+    }
+    }
 //Η έξοδος από την σελίδα χωρίς να υπάρχει υποβολή, καταχωρείται ως αποτυχία
         window.onbeforeunload = onExit;
         window.onunload = test;
-        function test(){
-           if (chk === 0)
-           {  window.location = "onclose.php";
-            }
+    function test(){
+        if (chk === 0)
+        {
+            window.location = "onclose.php";
         }
-function onExit(evt){
-            return "Η έξοδος καταγράφεται ως αποτυχία!!!";
-        }
-     
+    }
+    function onExit(evt)
+    {
+        return "Η έξοδος καταγράφεται ως αποτυχία!!!";
+    }
 </script>
 
 <?php
-echo "</head>
+echo "
+</head>
+
 <body  onload='setCountDown()' onbeforeunload='onExit()' >
 <div id='remain'>"; echo "$remainingSeconds seconds"; echo "</div>
+
 <div id='header'>Ερωτήσεις Quiz</div>
 
 <div id=nav_user><br/>
@@ -84,8 +90,10 @@ echo "</head>
 echo "</div>
 
 <div id='menu'>";include ("../layout/menu.php");echo "</div>";
+
 //----------Κώδικας αποτελέσματος - καταχώρησης στη βάση 
-if (isset($_POST["check"])) {
+if (isset($_POST["check"]))
+{
     echo "<div id='section_user_ans' ".$hiden_ans.">";
         $sum=0;
     for($j=1;($j<$_SESSION["i"]+1);$j++)
@@ -99,11 +107,11 @@ if (isset($_POST["check"])) {
         }
         else
         {
-            $ans=$_POST[$q];
-            mysql_query("SET NAMES utf8");
-            $query = ("SELECT ".$ans." FROM questions WHERE ID='".$ids[$j]."'");
-            $result = mysql_query($query) or die(mysql_error());
-            $row=mysql_fetch_array($result);
+           $ans=$_POST[$q];
+           mysql_query("SET NAMES utf8");
+           $query = ("SELECT ".$ans." FROM questions WHERE ID='".$ids[$j]."'");
+           $result = mysql_query($query) or die(mysql_error());
+           $row=mysql_fetch_array($result);
            echo "&nbsp;---&nbsp;".$quest[$j]."<br /><br />
                  <b><u>Η δική σας απάντηση:</u></b>&nbsp;---&nbsp;".$row[0]."
                                                                <br /><br />";
@@ -133,11 +141,11 @@ if (isset($_POST["check"])) {
         if($score>90) $scale="Αριστα";
         $datetime=date("Y-d-m H:i:s");
         mysql_query("INSERT INTO scores (user_name, scale, subject_ID, score,
-                    playdate) VALUES ('$username', '$scale', '$epilogi',
-                        '$score', '$datetime')");
+                        playdate) VALUES ('$username', '$scale', '$epilogi',
+                                                    '$score', '$datetime')");
         $score=0;
     unset($_SESSION["epilogi"]);
-}
+    }
 }
 //---------
 echo "<div id=section_user ".$hiden_div.">
@@ -146,7 +154,7 @@ echo "<div id=section_user ".$hiden_div.">
     $quest = array();
     $correct = array();
     $all_rows=(mysql_query("SELECT * FROM questions WHERE
-                    subject_ID='".$epilogi."' ORDER BY RAND() LIMIT ".$nums_q));
+                subject_ID='".$epilogi."' ORDER BY RAND() LIMIT ".$nums_q));
     
     $i=0;
 echo "<form method='post' action='questions.php'>";
@@ -160,11 +168,16 @@ echo "<table>
                                         .$row["question"]."&quot;</b></td>
         </tr>
       </table>";
-echo "<input type='radio' name='q".$i."' value='ans1' />".$row["ans1"]."<br />";
-echo "<input type='radio' name='q".$i."' value='ans2' />".$row["ans2"]."<br />";
-echo "<input type='radio' name='q".$i."' value='ans3' />".$row["ans3"]."<br />";
-echo "<input type='radio' name='q".$i."' value='ans4' />".$row["ans4"]."<br />";
-echo "<input type='radio' name='q".$i."' value='ans5' />".$row["ans5"]."<br />";
+echo "<input type='radio' name='q".$i."' value='ans1' />".$row["ans1"].
+                                                                    "<br />";
+echo "<input type='radio' name='q".$i."' value='ans2' />".$row["ans2"].
+                                                                    "<br />";
+echo "<input type='radio' name='q".$i."' value='ans3' />".$row["ans3"].
+                                                                    "<br />";
+echo "<input type='radio' name='q".$i."' value='ans4' />".$row["ans4"].
+                                                                    "<br />";
+echo "<input type='radio' name='q".$i."' value='ans5' />".$row["ans5"].
+                                                                    "<br />";
 echo "<hr />";
 
     $ids[$i]=$row["ID"];
@@ -180,7 +193,8 @@ echo "<hr />";
 
 echo"<br /><br />
     <input type='hidden' name='check' value='1'/>
-    <input type='submit' onclick='chkset()' value='Πάτησε για να δεις το αποτέλεσμα' />
+    <input type='submit' onclick='chkset()' 
+                                value='Πάτησε για να δεις το αποτέλεσμα' />
     </form><br/>
 
 </div>";
