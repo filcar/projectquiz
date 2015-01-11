@@ -35,12 +35,13 @@ echo"
     <div id='section_user'>
     <table border=1>
 	<tr>
-            <th>Κωδικός Ερώτησης</th>
+            <th>Κωδικός</th>
             <th>Ερώτηση</th>
             <th>Σωστή Απάντηση</th>
             <th colspan='2'><br /></th>
 	</tr>";
-    $query_sub = mysql_query("SELECT description FROM subjects WHERE ID='".$epilogi."'");
+    $query_sub = mysql_query("SELECT description FROM subjects WHERE ID='"
+                                                                .$epilogi."'");
     $cat_epilogi=mysql_fetch_array($query_sub);
         echo "<h2> Κατηγορία: ".$cat_epilogi["description"]."</h2>";
     $query = mysql_query("SELECT * FROM questions WHERE
@@ -56,12 +57,14 @@ echo"
     {
     echo"
     <tr>
-        <td rowspan='6'>".$row["ID"]."</td>
+        <td class='kenter' rowspan='6'>".$row["ID"]."</td>
         <td class='quest'>".$row["question"]."</td>
-        <td rowspan='6'>".$row["corans"]."</td>  
-        <td rowspan='6'>
-        <a href='question_delete.php?id=".$row["ID"]."'>Διαγραφή</a><br/><br/>
-        <a href='question_update.php?id=".$row["ID"]."'>Τροποποίηση</a></td>			
+        <td class='kenter' rowspan='6'>".$row["corans"]."</td>  
+      <td rowspan='6'>
+        <a href='question_delete.php?id=".$row["ID"]."'>Διαγραφή</a>
+        <br/><br/>
+        <a href='question_update.php?id=".$row["ID"]."'>Τροποποίηση</a>
+      </td>			
     </tr>
     <tr>
         <td> <b><u>Απάντηση 1:</u>&nbsp;&nbsp;&nbsp;</b>".$row["ans1"]."</td>

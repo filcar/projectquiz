@@ -28,7 +28,7 @@ echo"
     $query = mysql_query("SELECT * FROM subjects");
     while($row = mysql_fetch_array($query))
     {
-        echo" <option value='".$row["ID"]."'>".$row["subject_name"]."</option>";
+       echo" <option value='".$row["ID"]."'>".$row["subject_name"]."</option>";
     }
        echo"</select><br /><br /><br />
     
@@ -54,14 +54,16 @@ echo"
             <th>Αποτέλεσμα</th>
         </tr>";
 
-$all_scores = mysql_query("SELECT scores.id as ID, playdate, subject_name,score,scale FROM scores, subjects "
-        . " WHERE subject_ID=subjects.id and user_name='".$username."' ORDER BY ID");
+$all_scores = mysql_query("SELECT scores.id as ID, playdate, subject_name,
+              score, scale FROM scores, subjects WHERE subject_ID=subjects.id
+                                 AND user_name='".$username."' ORDER BY ID");
     while($score_row = mysql_fetch_array($all_scores))
     {
         echo"
         <tr>
             <td>".$score_row["ID"]."</td>
-            <td>".date("m/d/Y H:i:s", strtotime($score_row["playdate"]))."</td>
+            <td>".date("m/d/Y H:i:s", strtotime($score_row["playdate"]))."
+            </td>
             <td>".$score_row["subject_name"]."</td>
             <td>".$score_row["score"]."%</td>
             <td>".$score_row["scale"]."</td>

@@ -4,12 +4,15 @@ include_once("../includes/functions.php");
 session_start();
 check_role(1);
 
-$message=$_GET["message"];
-if(isset($_POST["epilogi"]))
-{$epilogi=$_POST["epilogi"];
-$_SESSION["epilogi"]=$epilogi;}
+$message="";
+if(isset($_GET["message"])) $message=$_GET["message"];
+$epilogi="";
+if(isset($_POST["epilogi"])){
+    $epilogi=$_POST["epilogi"];
+    $_SESSION["epilogi"]=$epilogi;}
 
-$categ_questions = (mysql_query("SELECT * FROM questions WHERE subject_ID='".$epilogi."'"));
+$categ_questions = (mysql_query("SELECT * FROM questions WHERE subject_ID='"
+                                                               .$epilogi."'"));
 $categ_query = (mysql_query("SELECT * FROM subjects WHERE ID='".$epilogi."'"));
 $categ_row = mysql_fetch_array($categ_query);
 
@@ -23,20 +26,21 @@ echo"
 </head>
 
 <body>
-    <div id='header'>Διαχείριση Ερωτήσεων</div>
-    
+<div id='header'>Διαχείριση Ερωτήσεων</div>
 <div id='nav'>
     <form method='post' action='questions.php'>
     Επιλογή Κατηγορίας
-        <select name='epilogi'>";
-        if(isset($epilogi)){
-            $query = mysql_query("SELECT * FROM subjects where id='".$epilogi."'");
-            while($row = mysql_fetch_array($query))
-            { echo" <option value='".$row["ID"]."' selected>".$row["subject_name"]."</option>";}
-        }
-            $query = mysql_query("SELECT * FROM subjects where id!='".$epilogi."'");
-            while($row = mysql_fetch_array($query))
-            { echo" <option value='".$row["ID"]."'>".$row["subject_name"]."</option>";}
+    <select name='epilogi'>";
+    if(isset($epilogi)){
+        $query = mysql_query("SELECT * FROM subjects where id='".$epilogi."'");
+        while($row = mysql_fetch_array($query))
+        { echo" <option value='".$row["ID"]."' selected>".$row["subject_name"]
+                                                                ."</option>";}
+    }
+       $query = mysql_query("SELECT * FROM subjects where id!='".$epilogi."'");
+        while($row = mysql_fetch_array($query))
+        { echo" <option value='".$row["ID"]."'>".$row["subject_name"]
+                                                                ."</option>";}
 echo "	</select><br />
 	<input type='submit' value='Συνέχισε' />
     </form>
@@ -55,10 +59,8 @@ if($message=="successdelete")
                 echo"<p>Η διαγραφή της ερώτησης έγινε επιτυχώς.</p>";
 
 echo"
-    </div>
-    
+</div>
 <div id='menu'>";include ("../layout/menu.php");echo "</div>
-
 <div id='section_user'>
     <h2>Κατηγορία:&nbsp;&nbsp;&nbsp".$categ_row["subject_name"]."
                         &nbsp;&nbsp;&nbsp;(".$categ_row["description"].")</h2>
@@ -77,9 +79,11 @@ echo"
         <td class='kenter' rowspan='6'>".$qrow["ID"]."</td>
         <td class='quest'>".$qrow["question"]."</td>
         <td class='kenter' rowspan='6'>".$qrow["corans"]."</td>  
-    <td rowspan='6'>
-        <a href='question_delete.php?id=".$qrow["ID"]."'>Διαγραφή</a><br/><br/>
-        <a href='question_update.php?id=".$qrow["ID"]."'>Τροποποίηση</a></td>			
+        <td rowspan='6'>
+            <a href='question_delete.php?id=".$qrow["ID"]."'>Διαγραφή</a>
+            <br /><br />
+            <a href='question_update.php?id=".$qrow["ID"]."'>Τροποποίηση</a>
+        </td>			
     </tr>
     <tr>
         <td> <b><u>Απάντηση 1:</u>&nbsp;&nbsp;&nbsp;</b>".$qrow["ans1"]."</td>
@@ -100,9 +104,7 @@ echo"
 echo"
     </table>
     </div><br/><br/>
-    
 <div id='footer'>";include "../layout/footer.php";echo "</div>
-
 </body>
 </html>";
 ?>

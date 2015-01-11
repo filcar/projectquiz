@@ -9,8 +9,10 @@ check_role(0);
     $epilogi=$_SESSION["epilogi"];
     $score=0;
     $datetime=date("Y-d-m H:i:s");
+    
     mysql_query("INSERT INTO scores (user_name, scale, subject_ID, score,
                     playdate) VALUES ('$username', '$scale', '$epilogi',
-                        '$score', '$datetime')");
+                                                '$score', '$datetime')");
+    
  header( "Location: ../index.php" );
 ?>

@@ -4,7 +4,8 @@ include_once("../includes/functions.php");
 session_start();
 check_role(1);
 
-$message=$_GET["message"];
+$message="";
+if(isset($_GET["message"])) $message=$_GET["message"];
 
 echo"
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org

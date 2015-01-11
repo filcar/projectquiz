@@ -36,9 +36,9 @@ echo"
 <div id='section'>
     <form method='post' action='categ_update-submit.php'>
         Όνομα Κατηγορίας: <input type='text' name='cat' value='".$cat."'
-                                    maxlength='255' size='100' /><br /><br />
+                                   maxlength='255' size='100' /><br /><br />
         Περιγραφή Κατηγορίας: <input type='text' name='descr' value='"
-                            .$descr."' maxlength='255' size='100' /><br /><br />
+                        .$descr."' maxlength='255' size='100' /><br /><br />
         <input type='hidden' name='updatecat' value='".$id."' />
         <input type='submit' name='submit' value='Τροποποίηση' />
     </form>
