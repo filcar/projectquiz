@@ -21,6 +21,7 @@ echo"
 <div id='header'>Καλώς ήρθατε στο Quiz μας. Χρήστης: ".$fullname."</div>
 
 <div id=nav>
+ <a href='top_10.php'>Τοπ 10 επιδόσεων</a><br/>
     <p>Επιλέξτε μία από τις παρακάτω θεματικές ενότητες:</p>
 <form method='post' action='questions.php'>
     
@@ -30,12 +31,12 @@ echo"
     {
        echo" <option value='".$row["ID"]."'>".$row["subject_name"]."</option>";
     }
-       echo"</select><br /><br /><br />
+       echo"</select><br /><br />
     
     Πλήθος Ερωτήσεων:<select name='nums_q'>
                         <option value='5'>ΠΕΝΤΕ</option>
                         <option value='10'>ΔΕΚΑ</option>
-                     </select><br /><br /><br /><br />
+                     </select><br /><br />
                      
     <input type='submit' value='Ξεκίνα το Quiz' />
 </form>
