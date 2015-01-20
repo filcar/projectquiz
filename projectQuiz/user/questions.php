@@ -139,7 +139,7 @@ if (isset($_POST["check"]))
         if($score>50) $scale="Καλώς";
         if($score>70) $scale="Πολύ καλά";
         if($score>90) $scale="Αριστα";
-        $datetime=date("Y-d-m H:i:s");
+        $datetime=date("Y-m-d H:i:s");
         mysql_query("INSERT INTO scores (user_name, scale, subject_ID, score,
                         playdate) VALUES ('$username', '$scale', '$epilogi',
                                                     '$score', '$datetime')");
