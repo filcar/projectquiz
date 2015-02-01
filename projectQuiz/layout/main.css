@@ -85,7 +85,8 @@ a.hidden {
 }
 th,td.quest {
     background-color:#FFFF99;
-    width: 600px;
+    padding:2px;
+   // width: 400px;
 }  
 td.kenter {
     text-align: center;

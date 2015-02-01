@@ -23,15 +23,15 @@ echo "</div>
     <table> 
         <tr>
             <td>Όνοματεπώνυμο χρήστη:</td>
-            <td><input type='text' name='fullname' size='50'/></td>
+            <td><input type='text' name='fullname_ins' size='50'/></td>
         </tr>
         <tr>
             <td>Όνομα χρήστη:</td>
-            <td><input type='text' name='username' /></td>
+            <td><input type='text' name='username_ins' /></td>
         </tr>
         <tr>
             <td>Κωδικός χρήστη:</td>
-            <td><input type='password' name='password'/></td>
+            <td><input type='password' name='password_ins'/></td>
         </tr>
     </table>    
         <input type='submit' value='Εγγραφή' />

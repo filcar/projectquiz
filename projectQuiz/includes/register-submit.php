@@ -4,9 +4,9 @@ include_once "functions.php";
 session_start();
 
 $msg="";
-$fullname=$_POST["fullname"];
-$username=$_POST["username"];
-$password=$_POST["password"];
+$fullname=$_POST["fullname_ins"];
+$username=$_POST["username_ins"];
+$password=$_POST["password_ins"];
 
 if (user_exist($username)) {
     $msg = "Το username χρησιμοποιείται ήδη ";}
