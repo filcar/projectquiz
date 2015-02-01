@@ -63,7 +63,7 @@ $all_scores = mysql_query("SELECT scores.id as ID, playdate, subject_name,
         echo"
         <tr>
             <td>".$score_row["ID"]."</td>
-            <td>".date("m/d/Y H:i:s", strtotime($score_row["playdate"]))."
+            <td>".date("d/m/Y H:i:s", strtotime($score_row["playdate"]))."
             </td>
             <td>".$score_row["subject_name"]."</td>
             <td>".$score_row["score"]."%</td>
