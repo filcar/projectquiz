@@ -16,12 +16,12 @@ echo"
 </head>
 
 <body>
-    <div id='header'>Οι δέκα καλύτερες προσπάθειες</div>
+    <div id='header'>Project Quiz</div>
 
     <div id='nav'></div>
 <div id='menu'>";include ("../layout/menu.php");echo "</div>";
 echo "<div id=section_user>
-    <h2>Καταχωρημένες Κατηγορίες</h2>
+    <h2>Οι δέκα καλύτερες προσπάθειες</h2>
 <table class='kenter' border=1>
     <tr>
         <th>Ονοματεπώνυμο χρήστη</th>

@@ -72,7 +72,7 @@ echo"
             <a href='user_profil.php?id=".$qrow["id"]."'>Καρτέλα χρήστη</a>
             <br /><br />";
             if($qrow["role"]==0) 
-            echo "<a href='xxxxx.php?id=".$qrow["id"]."'>Επιδόσεις χρήστη</a>";
+            echo "<a href='user_reslt.php?id=".$qrow["id"]."'>Επιδόσεις χρήστη</a>";
             echo 
         "</td>			
     </tr>
