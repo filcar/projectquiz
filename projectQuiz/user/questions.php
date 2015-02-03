@@ -129,7 +129,8 @@ if (isset($_POST["check"]))
             }
         }
     }
-    $score=$sum*10/$_SESSION["i"];
+    if($_SESSION["i"]!=0) $score=$sum*10/$_SESSION["i"];
+    else $score=0;
     echo "Αποτέλεσμα: ".$score."% <br/>
     </div>";
     if(isset($epilogi))
